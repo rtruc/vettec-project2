@@ -8,7 +8,7 @@ export const Footer = () => {
         display: flex;
         flex-direction: row;
 
-        flex-wrap: no-wrap;
+        flex-wrap: nowrap;
         justify-content: center;
         align-items: stretch;
 
@@ -22,19 +22,21 @@ export const Footer = () => {
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
 
-        z-index: 10;
-    `
-    const inputs = [{link: "https://www.linkedin.com/in/richard-truchanowicz/",
-                    iconURL: "/img/icons/linkedin.png",
-                    altTxt: "LinkedIn Icon"},
+        z-index: 10;`
+        
+    const contactLinks = [
+                    {link: "https://www.linkedin.com/in/richard-truchanowicz/",
+                        iconURL: "./img/icons/linkedin.png",
+                        altTxt: "LinkedIn Icon"},
                     {link: "https://github.com/rtruc/",
-                    iconURL: "/img/icons/github.png",
-                    altTxt: "Github Icon"}];
+                        iconURL: "./img/icons/github.png",
+                        altTxt: "Github Icon"}
+                    ];
 
     return (
         <>
             <FooterDiv>
-                {inputs.map((input, index) => {
+                {contactLinks.map((input, index) => {
                     return(
                         <div key={index}>
                         <FooterItem link={input.link}
@@ -43,15 +45,6 @@ export const Footer = () => {
                         </div>
                     );
                 })}
-                {/* <FooterItem link={inputs[0].link}
-                            iconURL={inputs[0].iconURL}
-                            altTxt={inputs[0].altTxt} />
-                <FooterItem link={"https://www.linkedin.com/in/richard-truchanowicz/"}
-                            iconURL={"/img/icons/linkedin.png"}
-                            altTxt={"LinkedIn Icon"} />
-                <FooterItem link={"https://github.com/rtruc/"}
-                            iconURL={"/img/icons/github.png"}
-                            altTxt={"Github Icon"} /> */}
             </FooterDiv>
         </>
     )

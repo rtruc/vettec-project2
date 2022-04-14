@@ -8,17 +8,15 @@ export const FooterItem = ({link, iconURL, altTxt}) => {
 
         &:hover {
             background-color: rgb(203, 201, 201);
-        }
-    `
+        }`
 
     const Icon = styled.img`
         max-height: 20px;
         margin-top: 5px;
 
-    & a:hover {
-        background-color: rgb(203, 201, 201);
-    } 
-    `
+        & a:hover {
+            background-color: rgb(203, 201, 201);
+        } `
 
         return (
             <>

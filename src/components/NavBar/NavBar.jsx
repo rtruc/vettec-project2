@@ -2,12 +2,9 @@ import styled from "styled-components"
 import { NavItem } from "./NavItem";
 import { SearchForm } from "./SearchForm";
 
-
 export const NavBar = () => {
 
     const NavBarDiv = styled.div`
-        /* @import url(https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext); */
-        /* font-family: 'Lato', sans-serif; */
 
         display: flex;
         flex-direction: row;
@@ -31,12 +28,22 @@ export const NavBar = () => {
             margin-left: auto;
         }`
 
+    const navEntries = [
+        { link: "/index.html", name: "Home" },
+        { link: "/about-me.html", name: "About Me" },
+        { link: "/journey.html", name: "My Journey" },
+    ]
+
+    const pathname = window.location.pathname;
+
     return (
         <>
             <NavBarDiv>
-                <NavItem link={"./index.html"} name={"Home"} />
-                <NavItem link={"./about-me.html"} name="About Me" />
-                <NavItem link={"./journey.html"} name="My Journey" />
+                {navEntries.map((link, index) => {
+                    return (
+                        <NavItem link={link.link} name={link.name} active={link.link == pathname} />
+                    );
+                })}
 
                 <SearchForm />
             </NavBarDiv>

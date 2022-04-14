@@ -1,11 +1,10 @@
 import styled from "styled-components";
 // import {NavLink} from "./NavLink";
 
-export const NavItem = ({link, name}) => {
+export const NavItem = ({ link, name, active }) => {
 
     const NavItemDiv = styled.div`
         padding: 10px 0px;
-    
     `;
 
     const NavLink = styled.a`
@@ -20,11 +19,31 @@ export const NavItem = ({link, name}) => {
         }
     `;
 
-    return (
-        <NavItemDiv>
-            <NavLink href={link}>{name}</NavLink>
-        </NavItemDiv>
-    )
+    const ActiveNavLink = styled(NavLink)`
+        font-weight: bolder;
+        background-color: rgba(105, 105, 105, 0.673);
+        cursor: pointer;
+
+        &:hover {
+            font-weight: bolder;
+            background-color: rgba(130, 129, 129, 0.895);
+            cursor: pointer;
+        } `
+
+    if (active) {
+        return (
+            <NavItemDiv>
+                <ActiveNavLink href={link}>{name}</ActiveNavLink>
+            </NavItemDiv> 
+            );
+    } else {
+        return (
+            <NavItemDiv>
+                <NavLink href={link}>{name}</NavLink>
+            </NavItemDiv>
+        );
+    }
+    
 
 }
 
