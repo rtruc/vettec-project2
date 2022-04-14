@@ -10,7 +10,8 @@ export const NavBar = () => {
         flex-direction: row;
 
         flex-wrap: nowrap;
-        justify-content: flex-start;
+        /* justify-content: flex-start; */
+        justify-content: center;
         align-items: center;
 
         position: fixed;
@@ -18,20 +19,20 @@ export const NavBar = () => {
         left: 0;
         right: 0;
 
-        background-color: rgba(128, 128, 128, 0.503);
+        background-color: rgba(233, 16, 246, 0.5);
 
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
 
         z-index: 10;
         & form:last-child {
-            margin-left: auto;
+            /* margin-left: auto; */
         }`
 
     const navEntries = [
-        { link: "/index.html", name: "Home" },
-        { link: "/about-me.html", name: "About Me" },
-        { link: "/journey.html", name: "My Journey" },
+        { link: "/", name: "ToDo" },
+        { link: "/completed", name: "Completed" },
+        // { link: "/journey.html", name: "My Journey" },
     ]
 
     const pathname = window.location.pathname;
@@ -41,11 +42,13 @@ export const NavBar = () => {
             <NavBarDiv>
                 {navEntries.map((link, index) => {
                     return (
-                        <NavItem link={link.link} name={link.name} active={link.link == pathname} />
+                        <div key={index}>
+                            <NavItem link={link.link} name={link.name} active={link.link === pathname} />
+                        </div>
                     );
                 })}
 
-                <SearchForm />
+                {/* <SearchForm /> */}
             </NavBarDiv>
         </>
     );

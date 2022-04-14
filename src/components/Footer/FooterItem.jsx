@@ -7,7 +7,7 @@ export const FooterItem = ({link, iconURL, altTxt}) => {
         transition: background-color .2s ease-out 100ms;
 
         &:hover {
-            background-color: rgb(203, 201, 201);
+            background-color: rgb(235, 16, 246);
         }`
 
     const Icon = styled.img`
@@ -15,7 +15,7 @@ export const FooterItem = ({link, iconURL, altTxt}) => {
         margin-top: 5px;
 
         & a:hover {
-            background-color: rgb(203, 201, 201);
+            background-color: rgb(235, 16, 246);
         } `
 
         return (

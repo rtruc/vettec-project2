@@ -15,18 +15,18 @@ export const NavItem = ({ link, name, active }) => {
         position: relative;
 
         &:hover {
-            background-color: rgb(203, 201, 201);
+            background-color: rgb(235, 16, 246);
         }
     `;
 
     const ActiveNavLink = styled(NavLink)`
-        font-weight: bolder;
-        background-color: rgba(105, 105, 105, 0.673);
+        /* font-weight: bolder; */
+        background-color: rgba(233, 16, 246, 0.5);
         cursor: pointer;
 
         &:hover {
-            font-weight: bolder;
-            background-color: rgba(130, 129, 129, 0.895);
+            /* font-weight: bolder; */
+            background-color: rgb(235, 16, 246);
             cursor: pointer;
         } `
 

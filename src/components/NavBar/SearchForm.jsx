@@ -1,10 +1,11 @@
 import styled from "styled-components";
+import { searchIcon } from "../../img/icons";
 
 
 export const SearchForm = () => {
 
     const SearchForm = styled.form`
-            margin-right: 10px;
+            /* margin-right: 10px; */
     `
 
     const SearchField = styled.input`
@@ -17,32 +18,42 @@ export const SearchForm = () => {
         border-radius: 5px;
         font-family: 'Lato', sans-serif;
 
-        background-image: url('/img/icons/searchicon.png');
+        /* background-image: url('/img/icons/searchicon.png'); */
+        background-image: url(${searchIcon});
         background-repeat: no-repeat;
         background-size: 19px;
-        background-position: left;
+        /* background-position: left; */
+        background-position: center;
+        text-align: center;
 
         transition: width 0.4s ease-in-out,
             background-color 0.4s ease-in-out,
             border-color 0.4s ease-in-out;
-
-        margin-right: 10;
+            
+        transition: width 0.4s ease-in-out,
+            background-color 0.4s ease-in-out,
+            border-color 0.4s ease-in-out,
+            box-shadow 0.2s ease-in-out;
+        /* margin-right: 10; */
+        /* margin-left: auto; */
+        margin-right: auto;
         margin-left: auto;
 
         &:hover {
-            width: 75%;
-        background-color: rgb(255, 255, 255);
-        width: 75%;
-        outline: none;
+            width: 90%;
+            background-color: rgb(255, 255, 255);
+            /* width: 75%; */
+            outline: none;
         }
 
         &:focus {
             background-image: none;
-        background-color: rgb(255, 255, 255);
-        width: 75%;
-        outline: none;
-        border-color: #7cb7e7;
-        box-shadow: 0 0 15px #7cb7e7;
+            background-color: rgb(255, 255, 255);
+            width: 90%;
+            outline: none;
+            border-color: #ce61fd;
+            box-shadow: inset 0 0 3px #7cb7e7;
+            /* box-shadow: inset 0 0 3px #ce61fd; */
         }
 
         &::placeholder {
@@ -50,10 +61,12 @@ export const SearchForm = () => {
             transition: color 0.4s ease-in-out;
         }
         &:hover::placeholder {
-            color: rgb(188, 188, 188);
+            /* color: rgb(188, 188, 188); */
+            color: rgb(251, 172, 255);
         }
         &:focus::placeholder {
-            color: rgb(188, 188, 188);
+            color: rgba(251, 172, 255, 0);
+            /* color: rgb(188, 188, 188); */
         }
     `
 
