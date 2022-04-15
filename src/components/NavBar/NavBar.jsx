@@ -1,8 +1,6 @@
 import styled from "styled-components"
 import { NavItem } from "./NavItem";
-import { SearchForm } from "./SearchForm";
-
-export const NavBar = () => {
+// import { SearchForm } from "./SearchForm";
 
     const NavBarDiv = styled.div`
 
@@ -28,14 +26,17 @@ export const NavBar = () => {
         & form:last-child {
             /* margin-left: auto; */
         }`
+export const NavBar = () => {
+
 
     const navEntries = [
-        { link: "/", name: "ToDo" },
+        { link: "/todo", name: "ToDo" },
         { link: "/completed", name: "Completed" },
         // { link: "/journey.html", name: "My Journey" },
     ]
 
     const pathname = window.location.pathname;
+    // const name = window.location.
 
     return (
         <>

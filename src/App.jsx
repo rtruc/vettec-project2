@@ -5,6 +5,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Completed, NotFound, Todo } from './pages';
 
 function App() {
+
+  // console.log(this.props.location.pathname);
   return (
     <>
       <BrowserRouter>
@@ -12,6 +14,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Todo />} />
           <Route path="/completed" element={<Completed />} />
+          {/* <Route path={`${this.props.location.pathname}`} element={<Todo />} /> */}
+          {/* <Route path={`${this.props.location.pathname}/completed`} element={<Completed />} /> */}
           <Route path="*" element={<NotFound />} />
 
         </Routes>

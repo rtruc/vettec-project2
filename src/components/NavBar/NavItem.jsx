@@ -1,8 +1,6 @@
 import styled from "styled-components";
 // import {NavLink} from "./NavLink";
 
-export const NavItem = ({ link, name, active }) => {
-
     const NavItemDiv = styled.div`
         padding: 10px 0px;
     `;
@@ -29,6 +27,7 @@ export const NavItem = ({ link, name, active }) => {
             background-color: rgb(235, 16, 246);
             cursor: pointer;
         } `
+export const NavItem = ({ link, name, active }) => {
 
     if (active) {
         return (
@@ -43,6 +42,7 @@ export const NavItem = ({ link, name, active }) => {
             </NavItemDiv>
         );
     }
+
     
 
 }

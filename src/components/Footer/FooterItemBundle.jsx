@@ -1,10 +1,6 @@
-import styled from "styled-components";
 
 export const FooterItemBundle = (footerItems) => {
 
-    // const FooterItemBundleDiv = styled.div`
-        
-    // `
 
     return (
         <>
@@ -14,8 +10,7 @@ export const FooterItemBundle = (footerItems) => {
                         {footerItem};
                     </>
                 )
-            })
-        }    
+            })}    
         </>
     )
 }
