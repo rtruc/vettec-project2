@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { FooterItem } from './FooterItem';
 import { githubIcon, linkedinIcon } from "../../img/icons";
 import { SearchForm } from "../NavBar/SearchForm";
+import { IconBundle } from "./IconBundle";
+import { Icon } from "./Icon";
 
 
 const FooterDiv = styled.div`
@@ -26,10 +28,7 @@ const FooterDiv = styled.div`
 
     z-index: 10;`
 
-const IconBundleDiv = styled.div`
-    display: flex;
-    flex-direction: row;
-`
+
 export const Footer = () => {
 
     const juhData = [
@@ -59,42 +58,35 @@ export const Footer = () => {
     ];
 
 
-    const juhContacts = <>
-                            <IconBundleDiv>
-                                {juhData.map((input, index) => {
-                                    return (
-                                        // <IconBundleDiv key={index}>
-                                        <FooterItem key={index+input.iconURL} link={input.link}
-                                            iconURL={input.iconURL}
-                                            altTxt={input.altTxt} />
-                                        // </IconBundleDiv>
-                                    );
-                                })}
-                            </IconBundleDiv>
-                        </>
-    const trucContacts = <>
-                            <IconBundleDiv>
-                                {trucData.map((input, index) => {
-                                    return (
-                                        // <IconBundleDiv key={index}>
-                                        <FooterItem key={index+input.iconURL} link={input.link}
-                                            iconURL={input.iconURL}
-                                            altTxt={input.altTxt} />
-                                        // </IconBundleDiv>
-                                    );
-                                })}
-                            </IconBundleDiv>
-                        </>
-    
-
     return (
-        <>
-            <FooterDiv>
-                {juhContacts}
-                <SearchForm />
-                {trucContacts}
+        <FooterDiv>
 
-            </FooterDiv>
-        </>
+            <IconBundle>
+                {juhData.map((input, index) => {
+                    return (
+                        <FooterItem key={index}>
+                            <a href={input.link}>
+                                <Icon alt={input.altTxt} src={input.iconURL} />
+                            </a>
+                        </FooterItem>
+                    );
+                })}
+            </IconBundle>
+
+            <SearchForm />
+
+            <IconBundle>
+                {trucData.map((input, index) => {
+                    return (
+                        <FooterItem key={index}>
+                            <a href={input.link}>
+                                <Icon alt={input.altTxt} src={input.iconURL} />
+                            </a>
+                        </FooterItem>
+                    );
+                })}
+            </IconBundle>
+
+        </FooterDiv>
     )
 }
