@@ -6,7 +6,7 @@ import { Completed, NotFound, Todo } from './pages';
 
 function App() {
 
-  console.log(window.location.pathname);
+  // console.log(window.location.pathname);
   return (
     <>
       <BrowserRouter>

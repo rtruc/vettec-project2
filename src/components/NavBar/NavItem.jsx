@@ -48,4 +48,3 @@ export const NavItem = ({ link, name, active }) => {
     
 
 }
-
