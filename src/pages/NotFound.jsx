@@ -1,9 +1,14 @@
+import styled from "styled-components";
+
+const CenteredHeading = styled.h1`
+    text-align: center;
+`
 
 
 export const NotFound = () => {
     return (
         <>
         <br></br>
-        <h1>Oops</h1>
+        <CenteredHeading>Oops</CenteredHeading>
         </>    );
 }

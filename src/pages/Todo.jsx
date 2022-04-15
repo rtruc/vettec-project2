@@ -1,9 +1,13 @@
+import styled from "styled-components";
 
+const CenteredHeading = styled.h1`
+text-align: center;
+`
 
 export const Todo = () => {
     return (
         <>
         <br></br>
-        <h1>Todo List</h1>
+        <CenteredHeading>Todo List</CenteredHeading>
         </>    );
 }

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 // import {NavLink} from "./NavLink";
 
@@ -5,7 +6,8 @@ import styled from "styled-components";
         padding: 10px 0px;
     `;
 
-    const NavLink = styled.a`
+    // const NavLink = styled.a`
+    const NavLink = styled(Link)`
         padding: 10px 20px;
         text-decoration: none;
         color: white;
@@ -32,13 +34,13 @@ export const NavItem = ({ link, name, active }) => {
     if (active) {
         return (
             <NavItemDiv>
-                <ActiveNavLink href={link}>{name}</ActiveNavLink>
+                <ActiveNavLink to={link}>{name}</ActiveNavLink>
             </NavItemDiv> 
             );
     } else {
         return (
             <NavItemDiv>
-                <NavLink href={link}>{name}</NavLink>
+                <NavLink to={link}>{name}</NavLink>
             </NavItemDiv>
         );
     }

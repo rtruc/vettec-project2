@@ -6,16 +6,14 @@ import { Completed, NotFound, Todo } from './pages';
 
 function App() {
 
-  // console.log(this.props.location.pathname);
+  // console.log(window.location.pathname);
   return (
     <>
       <BrowserRouter>
         <NavBar />
         <Routes>
-          <Route path="/" element={<Todo />} />
+          <Route path="/todo" element={<Todo />} />
           <Route path="/completed" element={<Completed />} />
-          {/* <Route path={`${this.props.location.pathname}`} element={<Todo />} /> */}
-          {/* <Route path={`${this.props.location.pathname}/completed`} element={<Completed />} /> */}
           <Route path="*" element={<NotFound />} />
 
         </Routes>

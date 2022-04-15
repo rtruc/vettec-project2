@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { FooterItem } from './FooterItem';
 import { githubIcon, linkedinIcon } from "../../img/icons";
-// import { FooterItemBundle } from "./FooterItemBundle";
 import { SearchForm } from "../NavBar/SearchForm";
 
 

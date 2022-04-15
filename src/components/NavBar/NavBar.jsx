@@ -1,3 +1,4 @@
+import { useLocation } from "react-router-dom";
 import styled from "styled-components"
 import { NavItem } from "./NavItem";
 // import { SearchForm } from "./SearchForm";
@@ -30,21 +31,26 @@ export const NavBar = () => {
 
 
     const navEntries = [
-        { link: "/todo", name: "ToDo" },
-        { link: "/completed", name: "Completed" },
+        { url: "/todo", name: "ToDo" },
+        { url: "/completed", name: "Completed" },
         // { link: "/journey.html", name: "My Journey" },
     ]
 
-    const pathname = window.location.pathname;
+    // const pathname = window.location.pathname;
+    // console.log(pathname);
     // const name = window.location.
+    
+    let pathname = useLocation().pathname;
+    console.log(pathname);
+
 
     return (
         <>
             <NavBarDiv>
-                {navEntries.map((link, index) => {
+                {navEntries.map((entry, index) => {
                     return (
                         <div key={index}>
-                            <NavItem link={link.link} name={link.name} active={link.link === pathname} />
+                            <NavItem link={entry.url} name={entry.name} active={pathname === entry.url} />
                         </div>
                     );
                 })}
