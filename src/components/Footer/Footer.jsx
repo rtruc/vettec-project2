@@ -11,7 +11,6 @@ const FooterDiv = styled.div`
     flex-direction: row;
 
     flex-wrap: nowrap;
-    /* justify-content: center; */
     justify-content: space-between;
     align-items: stretch;
 
@@ -20,7 +19,6 @@ const FooterDiv = styled.div`
     left: 0;
     right: 0;
 
-    /* background-color: rgba(128, 128, 128, 0.503); */
     background-color: rgba(233, 16, 246, 0.5);
 
     backdrop-filter: blur(10px);

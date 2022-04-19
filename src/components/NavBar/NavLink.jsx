@@ -7,7 +7,6 @@ export const NavLink = styled(Link)`
     text-decoration: none;
     color: white;
     transition: background-color .2s ease-out 100ms;
-    /* position: relative; */
 
     &:hover {
         background-color: rgb(235, 16, 246);

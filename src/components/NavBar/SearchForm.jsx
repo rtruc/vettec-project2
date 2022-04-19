@@ -3,7 +3,6 @@ import { searchIcon } from "../../img/icons";
 
 
 const SearchFormDiv = styled.form`
-        /* margin-right: 10px; */
         display:flex;
         align-items:center;
 `
@@ -47,7 +46,6 @@ const SearchField = styled.input`
         outline: none;
         border-color: #ce61fd;
         box-shadow: inset 0 0 3px #7cb7e7;
-        /* box-shadow: inset 0 0 3px #ce61fd; */
     }
 
     &::placeholder {

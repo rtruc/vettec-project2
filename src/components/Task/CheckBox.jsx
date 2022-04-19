@@ -4,26 +4,19 @@ import styled from "styled-components"
 // SIMPLE BUT FUNCTIONAL CHECKBOX
 // export const CheckBox = styled.input`
 export const CheckBox = styled.input.attrs({type: 'checkbox'})`
-
-    /* background-color: pink; */
-    /* outline-color: pink; */
-    /* border-color: purple; */
-    /* outline: 1px solid #1e5180; */
     cursor: pointer;
 
-    /* display: inline-block; */
-    width: 14px;
-    height: 14px;
-    /* border: 2px solid #bcbcbc; */
+    width: 18px;
+    height: 18px;
     border-radius: 2px;
 
-    accent-color: red;
-    
+    margin: 0px 5px;
 
+    accent-color: #ff3232;
 `
 
 
-// TODO: ATTEMPT AT FANCY CHECKBOX...
+// TODO: ATTEMPT A FANCY CHECKBOX...
 // export const CheckBox = styled.input.attrs({ type: 'checkbox' })`
 
 //     appearance: none;

@@ -1,6 +1,3 @@
-// Gets Todo Data
-// Parses data for given list
-// Passes data to Tasks and displays them
 import { Task } from "../Task/Task";
 import styled from "styled-components";
 import { getTasks } from "../Task/data";
@@ -11,8 +8,7 @@ const ListDiv = styled.div`
     gap: 10px;
     align-items: center;
 
-    padding-top: 30px;
-    
+    padding-top: 50px;
 `
 
 const testData = getTasks();
@@ -20,18 +16,14 @@ const testData = getTasks();
 
 export const List = (props) => {
 
+    // TODO: THIS IS KIND OF HACKY...
     const completionFilter = props.listType === "Completed";
-
-
-    console.log("Props: ", props.listType);
-    // console.log("List Type: ", listType);
-    console.log(completionFilter);
 
     return (
         <ListDiv>
             {testData.map((task, index) => {
                 return (
-                    task.isComplete === completionFilter ? <Task key={index} taskData={task} /> : null
+                    task.isComplete === completionFilter ? <Task key={task.id} taskData={task} /> : null
                 )
             })}
         </ListDiv>

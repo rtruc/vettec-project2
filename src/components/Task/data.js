@@ -1,5 +1,4 @@
-// Test data to builds Todos with
-
+// TEST DATA
 const tasks = [
     {
         title: "Wash the Dog",
@@ -60,73 +59,8 @@ const tasks = [
         date: "2022-04-23T01:41:51.593Z",
         isComplete: false,
         id: ""
-    },
-]
-// const tasks = [
-//     {
-//         title: "Wash the Dog",
-//         date: "04/19/2022",
-//         isComplete: false
-//     },
-//     {
-//         title: "Buy Groceries",
-//         date: "04/16/2022",
-//         isComplete: false
-//     },
-//     {
-//         title: "Pay Bills",
-//         date: "04/19/2022",
-//         isComplete: true
-//     },
-//     {
-//         title: "Mow the Lawn",
-//         date: "04/19/2022",
-//         isComplete: false
-//     },
-//     {
-//         title: "Wash Dishes",
-//         date: "04/19/2022",
-//         isComplete: false
-//     },
-//     {
-//         title: "Buy Plane Tickets",
-//         date: "04/16/2022",
-//         isComplete: false
-//     },
-//     {
-//         title: "Visit Friends",
-//         date: "04/19/2022",
-//         isComplete: true
-//     },
-//     {
-//         title: "Ship Package",
-//         date: "04/19/2022",
-//         isComplete: true
-//     },
-//     {
-//         title: "Submit Assignment",
-//         date: "04/22/2022",
-//         isComplete: false
-//     },
-//     {
-//         title: "Sleep",
-//         date: "04/23/2022",
-//         isComplete: false
-//     },
-// ]
-
-function generateID() {
-    const lookupString = `abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_+-=~[];',./\<>?`;
-    let id = "";
-
-    for (let i = 0; i < 33; i++) {
-        let rand = parseInt(lookupString.length * Math.random());
-        id += lookupString[parseInt(rand)];
-        // console.log(rand);
     }
-
-    return id;
-}
+]
 
 export function getTasks() {
     for(let task of tasks) {
@@ -137,6 +71,17 @@ export function getTasks() {
     return tasks;
 }
 
-export function getTask(number) {
-    return tasks[number];
+
+// JS RANDOM FUNCTION IS WEAK, SO NOT A GREAT ID GENERATOR, BUT IT WILL GET THE JOB DONE
+function generateID() {
+    const lookupString = `abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_+-=~[];',./\\<>?`;
+    let id = "";
+
+    for (let i = 0; i < 33; i++) {
+        let rand = parseInt(lookupString.length * Math.random());
+        id += lookupString[parseInt(rand)];
+    }
+
+    return id;
 }
+

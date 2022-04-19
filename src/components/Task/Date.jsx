@@ -21,9 +21,8 @@ const DueDateDiv = styled.input.attrs({type: 'date'})`
 
 export const DueDate = ({date}) => {
 
-    // CUT JSON DATE STRING DOWN TO HTML COMPLIANCE
+    // CUT OVERLY LONG JSON DATE STRING DOWN TO HTML COMPLIANCE
     date = date.substring(0, 10);
-    // console.log("date", date);
 
     return (
         <>

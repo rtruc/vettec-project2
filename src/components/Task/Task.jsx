@@ -1,32 +1,23 @@
-// Title
-// Date
-// IsComplete
-
 import styled from "styled-components";
 import { CheckBox } from "./CheckBox";
 import { DueDate } from "./Date";
-import { TitleDiv } from "./Title";
+import { Title } from "./Title";
 
 
-const TaskDiv = styled.div`
+const TaskColumn = styled.div`
     display: flex;
     flex-direction: column;
-
-
 `
 
 const TaskRow = styled.div`
     display:flex;
     flex-direction: row;
-    
     gap:5px;
-    
     align-items:center;
     
     background-color: pink;
     min-width: 300px;
     max-width: 60%;
-    
     max-height: 100px;
     
     padding: 5px;
@@ -38,30 +29,20 @@ const TaskRow = styled.div`
     border-radius:5px;
     box-shadow: 0 0 0 .75pt #fdaab8;
 
-    /* & h2 {
-        margin: 0px;
-    } */
-
-    & h4 {
-        margin: 0px;
-    }
 `
 
 
 export const Task = ({ taskData }) => {
 
-    // console.log("Task Date: " + taskData.date);
-
     return (
         <TaskRow>
-            {/* <input type={"checkbox"} /> */}
             {taskData.isComplete ? <CheckBox defaultChecked /> : 
                                    <CheckBox /> }
             
-            <TaskDiv>
-                <TitleDiv defaultValue={taskData.title} />
+            <TaskColumn>
+                <Title defaultValue={taskData.title} />
                 <DueDate date={taskData.date} />
-            </TaskDiv>
+            </TaskColumn>
         </TaskRow>
     )
 }

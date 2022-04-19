@@ -9,7 +9,6 @@ const NavBarDiv = styled.div`
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: center;
-    /* align-items: center; */
 
     position: fixed;
     top: 0;
@@ -38,12 +37,10 @@ export const NavBar = () => {
             <NavBarDiv>
                 {navEntries.map((entry, index) => {
                     return (
-                        // <div key={index}>
                              <NavItem key={index}>
                                  {entry.url === pathname ? <ActiveNavLink to={entry.url}>{entry.name}</ActiveNavLink> :
                                                             <NavLink to={entry.url}>{entry.name}</NavLink>}
                             </NavItem> 
-                        // </div>
                     );
                 })}
             </NavBarDiv>
