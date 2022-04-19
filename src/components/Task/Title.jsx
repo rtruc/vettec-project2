@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Title = styled.input.attrs({type: 'text'})`
+const TitleDiv = styled.input.attrs({type: 'text'})`
 
     background-color: inherit;
     border:none;
@@ -17,3 +17,11 @@ export const Title = styled.input.attrs({type: 'text'})`
     }
     
 `
+
+export const Title = ({title}) => {
+    return (
+        <TitleDiv defaultValue={title} />
+
+        // </TitleDiv>
+    )
+}

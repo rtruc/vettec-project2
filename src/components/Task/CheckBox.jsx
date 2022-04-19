@@ -2,8 +2,7 @@ import styled from "styled-components"
 
 
 // SIMPLE BUT FUNCTIONAL CHECKBOX
-// export const CheckBox = styled.input`
-export const CheckBox = styled.input.attrs({type: 'checkbox'})`
+export const CheckBoxDiv = styled.input.attrs({type: 'checkbox'})`
     cursor: pointer;
 
     width: 18px;
@@ -14,6 +13,15 @@ export const CheckBox = styled.input.attrs({type: 'checkbox'})`
 
     accent-color: #ff3232;
 `
+
+export const CheckBox = ({isComplete}) => {
+    return (
+        <>
+            {isComplete ? <CheckBoxDiv defaultChecked /> :
+                          <CheckBoxDiv />}
+        </>
+    )
+}
 
 
 // TODO: ATTEMPT A FANCY CHECKBOX...

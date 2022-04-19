@@ -36,11 +36,11 @@ export const Task = ({ taskData }) => {
 
     return (
         <TaskRow>
-            {taskData.isComplete ? <CheckBox defaultChecked /> : 
-                                   <CheckBox /> }
-            
+
+            <CheckBox isComplete={taskData.isComplete} />
+
             <TaskColumn>
-                <Title defaultValue={taskData.title} />
+                <Title title={taskData.title} />
                 <DueDate date={taskData.date} />
             </TaskColumn>
         </TaskRow>
