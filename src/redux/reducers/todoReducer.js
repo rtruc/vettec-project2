@@ -47,7 +47,6 @@ export const todoReducer = (state={}, action) => {
             return {tasks: tasks, filters: [...state.filters]};
         }
 
-        // 
         case 'ADD_TASK': {
             const tasks = [...state.tasks];
             const date       = JSON.parse(JSON.stringify(new Date()));

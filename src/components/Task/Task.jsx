@@ -15,6 +15,8 @@ const TaskRow = styled.div`
     flex-direction: row;
     gap:5px;
     align-items:center;
+
+    position:relative;
     
     background-color: pink;
     min-width: 300px;
