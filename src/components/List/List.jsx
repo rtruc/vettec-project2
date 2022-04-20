@@ -12,18 +12,25 @@ const ListDiv = styled.div`
     padding-bottom: 40px;
 `
 
-export const List = (props) => {
+export const List = ({filters}) => {
 
     const state = useSelector(state => state);
 
-    // TODO: THIS IS KIND OF HACKY...
-    const completionFilter = props.listType === "Completed";
+    let displayTasks = [];
+    for(let filter of filters) {
+        displayTasks.push(...state.filter(task => filters[0](task)));
+    }
+
+    // console.log("Filters: ", filters);
+    // console.log("State: ", state);
+    // console.log("Display tasks: ", displayTasks);
 
     return (
         <ListDiv>
-            {state.map((task, index) => {
+
+            {displayTasks.map((task, index) => {
                 return (
-                    task.isComplete === completionFilter ? <Task key={task._id} taskData={task} /> : null
+                    <Task key={task._id} taskData={task} /> 
                 )
             })}
         </ListDiv>
