@@ -9,7 +9,7 @@ const ListDiv = styled.div`
     align-items: center;
 
     padding-top: 50px;
-    padding-bottom: 40px;
+    padding-bottom: 50px;
 `
 
 export const List = ({filters}) => {

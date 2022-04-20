@@ -1,6 +1,6 @@
 import { List } from "../components/List/List";
+import {completedFilter} from "../util/filters"
 
-const completedFilter = (task) => {return task.isComplete === true};
 
 export const Completed = () => {
     return (
@@ -8,4 +8,4 @@ export const Completed = () => {
             <List filters={[completedFilter]} />
         </>
     );
-}
+} 

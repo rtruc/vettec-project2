@@ -1,11 +1,12 @@
 import { List } from "../components/List/List";
+import {allFilter} from "../util/filters"
 
-const unFilter = (task) => true;
+
 
 export const All = () => {
     return (
         <>
-            <List filters={[unFilter]} />
+            <List filters={[allFilter]} />
         </>
     );
 }
