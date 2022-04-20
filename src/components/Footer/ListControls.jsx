@@ -5,7 +5,7 @@ import { addTask, sortTitlesAscending, sortTitlesDescending, sortDatesAscending,
 import { NavItem } from "../NavBar/NavItem"
 import { NavButton } from "../NavBar/NavButton"
 import { Icon } from "./Icon";
-import { alphaDown, alphaUp } from "../../img/icons";
+import { alphaDown, alphaUp, timeDown, timeUp } from "../../img/icons";
 
 
 const ControlsDiv = styled.div`
@@ -33,8 +33,16 @@ export const Controls = () => {
             <NavButton onClick={() => dispatch(sortTitlesDescending())}>
                 <Icon src={alphaDown} />
             </NavButton>
-            <NavButton onClick={() => dispatch(sortDatesAscending())}>Sort Date Ascending</NavButton>
-            <NavButton onClick={() => dispatch(sortDatesDescending())}>Sort Date Descending</NavButton>
+            {/* <NavButton onClick={() => dispatch(sortDatesAscending())}>Sort Date Ascending</NavButton> */}
+            <NavButton onClick={() => dispatch(sortDatesAscending())}>
+            <Icon src={timeUp} />
+
+            </NavButton>
+            {/* <NavButton onClick={() => dispatch(sortDatesDescending())}>Sort Date Descending</NavButton> */}
+            <NavButton onClick={() => dispatch(sortDatesDescending())}>
+            <Icon src={timeDown} />
+                
+            </NavButton>
             <NavButton onClick={() => dispatch(addTask(pathname))}>+</NavButton>
         </ControlsDiv>
     );
