@@ -21,7 +21,5 @@ const TitleDiv = styled.input.attrs({type: 'text'})`
 export const Title = ({title}) => {
     return (
         <TitleDiv defaultValue={title} />
-
-        // </TitleDiv>
     )
 }

@@ -4,6 +4,7 @@ import { githubIcon, linkedinIcon } from "../../img/icons";
 import { SearchForm } from "../NavBar/SearchForm";
 import { IconBundle } from "./IconBundle";
 import { Icon } from "./Icon";
+import { Controls } from "./SortControl";
 
 
 const FooterDiv = styled.div`
@@ -71,7 +72,8 @@ export const Footer = () => {
                 })}
             </IconBundle>
 
-            <SearchForm />
+            {/* <SearchForm /> */}
+            <Controls />
 
             <IconBundle>
                 {trucData.map((input, index) => {
