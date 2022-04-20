@@ -22,7 +22,7 @@ function App() {
             <BrowserRouter>
                 <NavBar />
                 <Routes>
-                    <Route path="/" element={<Todo />} />
+                    <Route path="/" element={<Todo />} title="Todo" />
                     <Route path="/completed" element={<Completed />} />
                     <Route path="*" element={<NotFound />} />
 

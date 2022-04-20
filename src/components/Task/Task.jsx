@@ -33,11 +33,13 @@ const TaskRow = styled.div`
 
 
 export const Task = ({ taskData }) => {
+    // console.log("date: ", taskData.date);
+    // console.log("id: ", taskData.id);
 
     return (
         <TaskRow>
 
-            <CheckBox isComplete={taskData.isComplete} />
+            <CheckBox isComplete={taskData.isComplete} id={taskData.id} />
 
             <TaskColumn>
                 <Title title={taskData.title} />

@@ -1,7 +1,8 @@
+import { useDispatch } from "react-redux";
 import styled from "styled-components"
+import { toggleCompletionStatus } from "../../actions/actions";
 
 
-// SIMPLE BUT FUNCTIONAL CHECKBOX
 export const CheckBoxDiv = styled.input.attrs({type: 'checkbox'})`
     cursor: pointer;
 
@@ -14,14 +15,28 @@ export const CheckBoxDiv = styled.input.attrs({type: 'checkbox'})`
     accent-color: #ff3232;
 `
 
-export const CheckBox = ({isComplete}) => {
+export const CheckBox = ({isComplete, id}) => {
+    
+    // console.log(isComplete);
+    // console.log(id);
+    const dispatch = useDispatch();
+    const clicked = () => dispatch(toggleCompletionStatus(id));
+
     return (
         <>
-            {isComplete ? <CheckBoxDiv defaultChecked /> :
-                          <CheckBoxDiv />}
+            {isComplete ? <CheckBoxDiv onClick={clicked} defaultChecked /> :
+                          <CheckBoxDiv onClick={clicked} />}
         </>
     )
 }
+
+
+
+
+
+
+
+
 
 
 // TODO: ATTEMPT A FANCY CHECKBOX...

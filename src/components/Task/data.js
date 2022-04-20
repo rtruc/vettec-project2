@@ -1,4 +1,6 @@
 // TEST DATA
+// TODO: FIGURE OUT A BETTER WAY TO STORE DATES
+
 const tasks = [
     {
         title: "Wash the Dog",
@@ -73,7 +75,7 @@ export function getTasks() {
 
 
 // JS RANDOM FUNCTION IS WEAK, SO NOT A GREAT ID GENERATOR, BUT IT WILL GET THE JOB DONE
-function generateID() {
+export function generateID() {
     const lookupString = `abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_+-=~[];',./\\<>?`;
     let id = "";
 

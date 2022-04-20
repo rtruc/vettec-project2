@@ -1,7 +1,8 @@
 import { useRef } from "react";
 import { useDispatch } from "react-redux";
+import { useLocation } from "react-router-dom";
 import styled from "styled-components";
-import { sortAlphabeticallyAscending, sortAlphabeticallyDescending, sortDateAscending, sortDateDescending } from "../../actions/sort";
+import { addTask, sortAlphabeticallyAscending, sortAlphabeticallyDescending, sortDateAscending, sortDateDescending } from "../../actions/actions";
 
 const ControlsDiv = styled.div`
     display:flex;
@@ -9,8 +10,9 @@ const ControlsDiv = styled.div`
 `
 
 export const Controls = () => {
-    
+
     const dispatch = useDispatch();
+    let pathname = useLocation().pathname;
     // const inputRef = useRef();
 
     return (
@@ -19,6 +21,7 @@ export const Controls = () => {
         <button onClick={() => dispatch(sortAlphabeticallyDescending())}>Sort Title Des</button>
         <button onClick={() => dispatch(sortDateAscending())}>Sort Date Asc</button>
         <button onClick={() => dispatch(sortDateDescending())}>Sort Date Des</button>
+        <button onClick={() => dispatch(addTask(pathname))}>+</button>
         </ControlsDiv>
     );
 

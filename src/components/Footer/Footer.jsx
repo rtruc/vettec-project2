@@ -4,7 +4,7 @@ import { githubIcon, linkedinIcon } from "../../img/icons";
 import { SearchForm } from "../NavBar/SearchForm";
 import { IconBundle } from "./IconBundle";
 import { Icon } from "./Icon";
-import { Controls } from "./SortControl";
+import { Controls } from "./ListControls";
 
 
 const FooterDiv = styled.div`
