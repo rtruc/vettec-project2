@@ -28,6 +28,8 @@ export const NavBar = () => {
     const navEntries = [
         { url: "/", name: "ToDo" },
         { url: "/completed", name: "Completed" },
+        { url: "/all", name: "All" },
+        
     ]
     
     let pathname = useLocation().pathname;

@@ -21,10 +21,6 @@ export const List = ({filters}) => {
         displayTasks.push(...state.filter(task => filters[0](task)));
     }
 
-    // console.log("Filters: ", filters);
-    // console.log("State: ", state);
-    // console.log("Display tasks: ", displayTasks);
-
     return (
         <ListDiv>
 
