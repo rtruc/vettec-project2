@@ -19,7 +19,7 @@ export const List = (props) => {
     // console.log("Tasks List: ", testData);
 
     const stateData = useSelector(state => state);
-    console.log("List State: ", stateData);
+    // console.log("List State: ", stateData);
 
     // TODO: THIS IS KIND OF HACKY...
     const completionFilter = props.listType === "Completed";
@@ -28,7 +28,7 @@ export const List = (props) => {
         <ListDiv>
             {stateData.map((task, index) => {
                 return (
-                    task.isComplete === completionFilter ? <Task key={task.id} taskData={task} /> : null
+                    task.isComplete === completionFilter ? <Task key={task._id} taskData={task} /> : null
                 )
             })}
         </ListDiv>

@@ -1,4 +1,6 @@
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
+import { editDate } from "../../actions/actions";
 
 const DueDateDiv = styled.input.attrs({type: 'date'})`
     background-color: inherit;
@@ -19,14 +21,15 @@ const DueDateDiv = styled.input.attrs({type: 'date'})`
 
 `
 
-export const DueDate = ({date}) => {
+export const DueDate = ({date, _id}) => {
 
     // CUT OVERLY LONG JSON DATE STRING DOWN TO HTML COMPLIANCE
     date = date.substring(0, 10);
-
+    const dispatch = useDispatch();
     return (
         <>
-            <DueDateDiv defaultValue={date} />
+            {/* <DueDateDiv defaultValue={date} /> */}
+            <DueDateDiv defaultValue={date} onChange={e => dispatch(editDate(_id, e.target.value))} />
         </>
     )
 }

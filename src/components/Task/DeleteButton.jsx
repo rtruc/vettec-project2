@@ -1,29 +1,35 @@
 import { useDispatch } from "react-redux";
 import styled from "styled-components"
-import { toggleCompletionStatus } from "../../actions/actions";
+import { deleteTask } from "../../actions/actions";
 
 
-export const CheckBoxDiv = styled.input.attrs({type: 'checkbox'})`
+// export const DeleteButtonDiv = styled.input.attrs({type: 'button'})`
+// export const DeleteButtonDiv = styled.div`
+export const DeleteButtonDiv = styled.button`
     cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     width: 18px;
     height: 18px;
     border-radius: 2px;
 
     margin: 0px 5px;
+    background-color: red;
+    /* content: "X"; */
 
-    accent-color: #ff3232;
 `
 
-export const CheckBox = ({isComplete, _id}) => {
+export const DeleteButton = ({_id}) => {
     
     const dispatch = useDispatch();
-    const clicked  = () => dispatch(toggleCompletionStatus(_id));
+    const clicked  = () => dispatch(deleteTask(_id));
 
     return (
         <>
-            {isComplete ? <CheckBoxDiv onClick={clicked} defaultChecked /> :
-                          <CheckBoxDiv onClick={clicked} />}
+            <DeleteButtonDiv onClick = {clicked}>X</DeleteButtonDiv> 
         </>
     )
 }

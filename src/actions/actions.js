@@ -1,6 +1,11 @@
-export const sortAlphabeticallyAscending = () => ({ type: 'SORT_ALPHA_UP'});
-export const sortAlphabeticallyDescending = () => ({ type: 'SORT_ALPHA_DOWN'});
-export const sortDateAscending = () => ({ type: 'SORT_DATE_UP'});
-export const sortDateDescending = () => ({ type: 'SORT_DATE_DOWN'});
-export const addTask = (pathName) => ({type: 'ADD_TASK', pathName: pathName});
-export const toggleCompletionStatus = (id) => ({type: 'CHECKBOX_CLICKED', id: id});
+export const sortTitlesAscending    = ()         => ({ type: 'SORT_ALPHA_UP'});
+export const sortTitlesDescending   = ()         => ({ type: 'SORT_ALPHA_DOWN'});
+export const sortDatesAscending     = ()         => ({ type: 'SORT_DATE_UP'});
+export const sortDatesDescending    = ()         => ({ type: 'SORT_DATE_DOWN'});
+
+export const addTask                = (pathName) => ({ type  : 'ADD_TASK', pathName: pathName});
+
+export const toggleCompletionStatus = (_id)      => ({ type  : 'CHECKBOX_CLICKED', _id: _id});
+export const deleteTask             = (_id)      => ({ type  : 'DELETE_TASK', _id: _id});
+export const editTitle              = (_id, textUpdate) => ({ type  : 'EDIT_TITLE', _id: _id, textUpdate: textUpdate});
+export const editDate               = (_id, dateUpdate) => ({ type  : 'EDIT_DATE',  _id: _id, dateUpdate: dateUpdate});

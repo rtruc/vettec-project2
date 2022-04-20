@@ -23,7 +23,7 @@ export const AltList = (props) => {
         <ListDiv>
             {testData.map((task, index) => {
                 return (
-                    task.isComplete === completionFilter ? <Task key={task.id} taskData={task} /> : null
+                    task.isComplete === completionFilter ? <Task key={task._id} taskData={task} /> : null
                 )
             })}
         </ListDiv>

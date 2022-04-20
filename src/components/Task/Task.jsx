@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { CheckBox } from "./CheckBox";
 import { DueDate } from "./Date";
+import { DeleteButton } from "./DeleteButton";
 import { Title } from "./Title";
 
 
@@ -39,11 +40,12 @@ export const Task = ({ taskData }) => {
     return (
         <TaskRow>
 
-            <CheckBox isComplete={taskData.isComplete} id={taskData.id} />
+            <CheckBox isComplete={taskData.isComplete} _id={taskData._id} />
+            <DeleteButton _id={taskData._id} />
 
             <TaskColumn>
-                <Title title={taskData.title} />
-                <DueDate date={taskData.date} />
+                <Title title={taskData.title} _id={taskData._id}/>
+                <DueDate date={taskData.date}  _id={taskData._id} />
             </TaskColumn>
         </TaskRow>
     )

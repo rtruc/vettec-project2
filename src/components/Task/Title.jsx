@@ -1,4 +1,6 @@
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
+import { editTitle } from "../../actions/actions";
 
 const TitleDiv = styled.input.attrs({type: 'text'})`
 
@@ -18,8 +20,14 @@ const TitleDiv = styled.input.attrs({type: 'text'})`
     
 `
 
-export const Title = ({title}) => {
+
+export const Title = ({title, _id}) => {
+    // console.log("Title: ", title);
+    // console.log("_id: ", _id);
+
+    const dispatch = useDispatch();
+
     return (
-        <TitleDiv defaultValue={title} />
+        <TitleDiv defaultValue={title} onChange={e => dispatch(editTitle(_id, e.target.value))} />
     )
 }
