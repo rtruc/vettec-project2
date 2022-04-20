@@ -11,44 +11,45 @@ function sortByVar(t1, t2, property) {
     return 0;
 }
 
-function findTaskNumberIndexByID(state, _id) {
-    for(let i in state) {
-        if(state[i]._id === _id) {
+function findTaskNumberIndexByID(tasks, _id) {
+    for(let i in tasks) {
+        if(tasks[i]._id === _id) {
             return i;
         }
     }
     return -1;
 }
 
-export const todoReducer = (state=[], action) => {
+export const todoReducer = (state={}, action) => {
     
     switch(action.type) {
         case 'SORT_ALPHA_UP': {
-            const newState = [...state];
-            newState.sort((t1, t2) => sortByVar(t1, t2, 'title'));            
-            return newState;
+            const tasks = [...state.tasks];
+            tasks.sort((t1, t2) => sortByVar(t1, t2, 'title'));            
+            return {tasks: tasks, filters: [...state.filters]};
         }
 
         case 'SORT_ALPHA_DOWN': {
-            const newState = [...state];
-            newState.sort((t1, t2) => sortByVar(t2, t1, 'title'));            
-            return newState;
+            const tasks = [...state.tasks];
+            tasks.sort((t1, t2) => sortByVar(t2, t1, 'title'));            
+            return {tasks: tasks, filters: [...state.filters]};
         }
 
         case 'SORT_DATE_UP': {
-            const newState = [...state];
-            newState.sort((t1, t2) => sortByVar(t1, t2, 'date'));            
-            return newState;
+            const tasks = [...state.tasks];
+            tasks.sort((t1, t2) => sortByVar(t1, t2, 'date'));            
+            return {tasks: tasks, filters: [...state.filters]};
         }
 
         case 'SORT_DATE_DOWN': {
-            const newState = [...state];
-            newState.sort((t1, t2) => sortByVar(t2, t1, 'date'));            
-            return newState;
+            const tasks = [...state.tasks];
+            tasks.sort((t1, t2) => sortByVar(t2, t1, 'date'));            
+            return {tasks: tasks, filters: [...state.filters]};
         }
 
+        // 
         case 'ADD_TASK': {
-            const newState = [...state];
+            const tasks = [...state.tasks];
             const date       = JSON.parse(JSON.stringify(new Date()));
             const isComplete = action.pathName === "/completed" ? true : false;
             
@@ -57,40 +58,40 @@ export const todoReducer = (state=[], action) => {
                              isComplete: isComplete,
                              _id        : generateID()};
 
-            newState.push(newTask);
-            return newState;
+            tasks.push(newTask);
+            return {tasks: tasks, filters: [...state.filters]};
         }
 
         case 'CHECKBOX_CLICKED': {
-            const newState = [...state];
+            const tasks = [...state.tasks];
 
-            const index = findTaskNumberIndexByID(state, action._id);
-            newState[index].isComplete = !newState[index].isComplete;
+            const index = findTaskNumberIndexByID(tasks, action._id);
+            tasks[index].isComplete = !tasks[index].isComplete;
 
-            return newState;
+            return {tasks: tasks, filters: [...state.filters]};
         }
 
         case 'EDIT_TITLE': {            
-            const index = findTaskNumberIndexByID(state, action._id);
-            state[index].title = action.textUpdate;
+            const index = findTaskNumberIndexByID(state.tasks, action._id);
+            state.tasks[index].title = action.textUpdate;
 
             return state;
         }
 
         case 'EDIT_DATE': {
-            const index = findTaskNumberIndexByID(state, action._id);
-            state[index].date = action.dateUpdate;
+            const index = findTaskNumberIndexByID(state.tasks, action._id);
+            state.tasks[index].date = action.dateUpdate;
 
             return state;
         }
 
         case 'DELETE_TASK': {
-            const newState = [...state];
-            const index = findTaskNumberIndexByID(state, action._id);
+            const tasks = [...state.tasks];
+            const index = findTaskNumberIndexByID(tasks, action._id);
 
-            newState.splice(index, 1);
+            tasks.splice(index, 1);
 
-            return newState;
+            return {tasks: tasks, filters: [...state.filters]};
         }
 
         default:

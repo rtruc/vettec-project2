@@ -14,7 +14,7 @@ const ListDiv = styled.div`
 
 export const List = ({filters}) => {
 
-    const state = useSelector(state => state);
+    const state = useSelector(state => state.tasks);
 
     let displayTasks = [];
     for(let filter of filters) {
