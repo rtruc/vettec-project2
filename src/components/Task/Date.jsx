@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
-import { editDate } from "../../actions/actions";
+import { editDate } from "../../redux/actions/actions";
 
 const DueDateDiv = styled.input.attrs({type: 'date'})`
     background-color: inherit;

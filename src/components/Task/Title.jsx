@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
-import { editTitle } from "../../actions/actions";
+import { editTitle } from "../../redux/actions/actions";
 
 const TitleDiv = styled.input.attrs({type: 'text'})`
 

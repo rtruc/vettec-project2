@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import styled from "styled-components"
-import { toggleCompletionStatus } from "../../actions/actions";
+import { toggleCompletionStatus } from "../../redux/actions/actions";
 
 
 export const CheckBoxDiv = styled.input.attrs({type: 'checkbox'})`

@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import styled from "styled-components"
-import { deleteTask } from "../../actions/actions";
+import { deleteTask } from "../../redux/actions/actions";
 
 
 // export const DeleteButtonDiv = styled.input.attrs({type: 'button'})`

@@ -1,5 +1,5 @@
 import { createStore } from 'redux';
-import { getTasks } from './util/data';
+import { getTasks } from '../util/data';
 import { todoReducer } from './reducers/todoReducer';
 
 const initData = getTasks();

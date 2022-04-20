@@ -1,4 +1,4 @@
-import { generateID } from "../util/data";
+import { generateID } from "../../util/data";
 
 
 function sortByVar(t1, t2, property) {
