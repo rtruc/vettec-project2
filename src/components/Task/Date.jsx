@@ -26,9 +26,9 @@ export const DueDate = ({date, _id}) => {
     // CUT OVERLY LONG JSON DATE STRING DOWN TO HTML COMPLIANCE
     date = date.substring(0, 10);
     const dispatch = useDispatch();
+
     return (
         <>
-            {/* <DueDateDiv defaultValue={date} /> */}
             <DueDateDiv defaultValue={date} onChange={e => dispatch(editDate(_id, e.target.value))} />
         </>
     )

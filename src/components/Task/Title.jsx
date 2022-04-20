@@ -22,8 +22,6 @@ const TitleDiv = styled.input.attrs({type: 'text'})`
 
 
 export const Title = ({title, _id}) => {
-    // console.log("Title: ", title);
-    // console.log("_id: ", _id);
 
     const dispatch = useDispatch();
 

@@ -1,6 +1,5 @@
-import { generateID, getTasks } from "../components/Task/data";
+import { generateID } from "../components/Task/data";
 
-let testData = getTasks();
 
 function sortByVar(t1, t2, property) {
     if (t1[property] < t2[property]) {
@@ -21,8 +20,7 @@ function findTaskNumberIndexByID(state, _id) {
     return -1;
 }
 
-export const listControlsReducer = (state=[], action) => {
-    
+export const todoReducer = (state=[], action) => {
     
     switch(action.type) {
         case 'SORT_ALPHA_UP': {
@@ -64,7 +62,6 @@ export const listControlsReducer = (state=[], action) => {
         }
 
         case 'CHECKBOX_CLICKED': {
-
             const newState = [...state];
 
             const index = findTaskNumberIndexByID(state, action._id);
@@ -81,25 +78,17 @@ export const listControlsReducer = (state=[], action) => {
         }
 
         case 'EDIT_DATE': {
-            console.log("Edit Date");
             const index = findTaskNumberIndexByID(state, action._id);
             state[index].date = action.dateUpdate;
 
             return state;
-
         }
 
         case 'DELETE_TASK': {
-            console.log("Delete Task");
-            // const newState = [...state];
             const newState = [...state];
             const index = findTaskNumberIndexByID(state, action._id);
-            newState.splice(index, 1);
 
-            // console.log("State Pre Slice: ", state);
-            // const newState = state.splice(index, 1);
-            // console.log("State Post Slice: ", state);
-            // console.log("NState Post Slice: ", newState);
+            newState.splice(index, 1);
 
             return newState;
         }

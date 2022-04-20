@@ -34,8 +34,6 @@ const TaskRow = styled.div`
 
 
 export const Task = ({ taskData }) => {
-    // console.log("date: ", taskData.date);
-    // console.log("id: ", taskData.id);
 
     return (
         <TaskRow>
