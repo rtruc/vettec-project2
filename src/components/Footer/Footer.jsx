@@ -21,6 +21,8 @@ const FooterDiv = styled.div`
     left: 0;
     right: 0;
 
+    height: 50px;
+
     background-color: rgba(233, 16, 246, 0.5);
 
     backdrop-filter: blur(10px);
@@ -31,7 +33,7 @@ const FooterDiv = styled.div`
 
 export const Footer = () => {
 
-    const juhData = [
+    const juhSocial = [
         {
             link: "https://www.linkedin.com/in/juhyun-shin/",
             iconURL: linkedinIcon,
@@ -44,7 +46,7 @@ export const Footer = () => {
         }
     ];
 
-    const trucData = [
+    const trucSocial = [
         {
             link: "https://github.com/rtruc/",
             iconURL: githubIcon,
@@ -62,16 +64,16 @@ export const Footer = () => {
         <FooterDiv>
 
             <IconBundle>
-                <SocialMediaIcon iconInfo={juhData[0]} />
-                <SocialMediaIcon iconInfo={juhData[1]} />
+                <SocialMediaIcon iconInfo={juhSocial[0]} />
+                <SocialMediaIcon iconInfo={juhSocial[1]} />
             </IconBundle>
 
             {/* <SearchForm /> */}
             <ListControls />
 
             <IconBundle>
-                <SocialMediaIcon iconInfo={trucData[0]} />
-                <SocialMediaIcon iconInfo={trucData[1]} />
+                <SocialMediaIcon iconInfo={trucSocial[0]} />
+                <SocialMediaIcon iconInfo={trucSocial[1]} />
             </IconBundle>
 
         </FooterDiv>

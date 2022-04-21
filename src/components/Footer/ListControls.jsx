@@ -13,6 +13,7 @@ const ControlsDiv = styled.div`
     justify-content: center;
     gap: 5px;
     font-weight: bolder;
+    height: 100%;
 `
 
 export const ListControls = () => {

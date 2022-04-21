@@ -3,8 +3,13 @@ import { FooterItem } from "./FooterItem";
 import { Icon } from "./Icon"
 
 const SocialMediaIconDiv = styled.div`
+    /* padding: 5px 5px; */
+    display: flex;
+    align-items: center;
+    
     padding: 0px 5px;
-    /* padding: 0px 5px; */
+    height: 100%;
+
     transition: background-color .2s ease-out 100ms;
 
     
@@ -17,7 +22,7 @@ const SocialMediaIconDiv = styled.div`
 
 export const SocialMediaIcon = ({ iconInfo }) => {
 
-    console.log(iconInfo.link);
+    // console.log(iconInfo.link);
     // console.log(iconInfo);
 
     return (

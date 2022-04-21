@@ -8,11 +8,12 @@ export const NavButton = styled.button`
     align-items: center;
 
     cursor: pointer;
-    max-height: 70px;
-    min-height: 40px;
+    /* max-height: 70px; */
+    /* height: 100%; */
+    /* min-height: 40px; */
 
-    min-width: 40px;
-    max-width: 80px;
+    /* min-width: 40px; */
+    /* max-width: 80px; */
 
     border: none;
 
