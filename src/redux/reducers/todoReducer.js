@@ -25,31 +25,28 @@ export const todoReducer = (state={}, action) => {
     
     switch(action.type) {
         case 'SORT_ALPHA_UP': {
-            const tasks = [...state.tasks];
-            tasks.sort((t1, t2) => sortByVar(t1, t2, 'title'));            
-            return {tasks: tasks, filters: state.filters};
+            console.log(state);
+            state.tasks.sort((t1, t2) => sortByVar(t1, t2, 'title'));            
+            return {...state};
         }
 
         case 'SORT_ALPHA_DOWN': {
-            const tasks = [...state.tasks];
-            tasks.sort((t1, t2) => sortByVar(t2, t1, 'title'));            
-            return {tasks: tasks, filters: state.filters};
+            state.tasks.sort((t1, t2) => sortByVar(t2, t1, 'title'));            
+            return {...state};
         }
 
         case 'SORT_DATE_UP': {
-            const tasks = [...state.tasks];
-            tasks.sort((t1, t2) => sortByVar(t1, t2, 'date'));            
-            return {tasks: tasks, filters: state.filters};
+            state.tasks.sort((t1, t2) => sortByVar(t1, t2, 'date'));            
+            return {...state};
         }
 
         case 'SORT_DATE_DOWN': {
-            const tasks = [...state.tasks];
-            tasks.sort((t1, t2) => sortByVar(t2, t1, 'date'));            
-            return {tasks: tasks, filters: state.filters};
+            state.tasks.sort((t1, t2) => sortByVar(t2, t1, 'date'));            
+            return {...state};
         }
 
         case 'ADD_TASK': {
-            const tasks = [...state.tasks];
+            // const tasks = state.tasks;
             const date       = JSON.parse(JSON.stringify(new Date()));
             const isComplete = action.pathName === "/completed" ? true : false;
             
@@ -58,17 +55,18 @@ export const todoReducer = (state={}, action) => {
                              isComplete: isComplete,
                              _id        : generateID()};
 
-            tasks.push(newTask);
-            return {tasks: tasks, filters: state.filters};
+            state.tasks.push(newTask);
+            // tasks.push(newTask);
+            return {...state};
         }
 
         case 'CHECKBOX_CLICKED': {
-            const tasks = [...state.tasks];
+            const tasks = state.tasks;
 
             const index = findTaskNumberIndexByID(tasks, action._id);
             tasks[index].isComplete = !tasks[index].isComplete;
 
-            return {tasks: tasks, filters: state.filters};
+            return {...state};
         }
 
 
@@ -81,12 +79,12 @@ export const todoReducer = (state={}, action) => {
         }
 
         case 'EDIT_DATE': {
-            const tasks = [...state.tasks];
+            const tasks = state.tasks;
 
             const index = findTaskNumberIndexByID(tasks, action._id);
             tasks[index].date = action.dateUpdate;
 
-            return {tasks: tasks, filters: state.filters};
+            return {...state};
         }
         // case 'EDIT_DATE': {
         //     const index = findTaskNumberIndexByID(state.tasks, action._id);
@@ -96,29 +94,21 @@ export const todoReducer = (state={}, action) => {
         // }
 
         case 'DELETE_TASK': {
-            const tasks = [...state.tasks];
+            const tasks = state.tasks;
             const index = findTaskNumberIndexByID(tasks, action._id);
 
             tasks.splice(index, 1);
 
-            // return {tasks: tasks, filters: [...state.filters]};
-            return {tasks: tasks, filters: state.filters};
+            return {...state};
         }
 
         case 'SEARCH_TITLES': {
-            const searchFilter = textFilter(action.searchText);
-            const updatedFilters = state.filters;
-
             if(action.searchText.length > 0) {
-                updatedFilters.searchFilter = searchFilter;
-                const updatedState = {tasks: state.tasks, filters: updatedFilters}
-    
-                return updatedState;
+                state.filters.searchFilter = textFilter(action.searchText);
+                return {...state};
             } else {
-                delete updatedFilters.searchFilter;
-                const updatedState = {tasks: state.tasks, filters: updatedFilters}
-    
-                return updatedState;
+                delete state.filters.searchFilter;    
+                return {...state};
             }
         }
 
@@ -152,8 +142,8 @@ export const todoReducer = (state={}, action) => {
         }
 
         default:
-            console.log("DEFAULT REDUCER TRIGGERED");
-            console.log("Action: ", action);
+            // console.log("DEFAULT REDUCER TRIGGERED");
+            // console.log("Action: ", action);
             return state;
     }
 }

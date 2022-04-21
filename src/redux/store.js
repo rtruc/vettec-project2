@@ -21,4 +21,4 @@ const initBundle = {tasks: initData, filters: filters, dateRange: dateRange };
 // export const store = createStore(todoReducer, initData); 
 export const store = createStore(todoReducer, initBundle); 
 
-console.log("Store: ", store);
+// console.log("Store: ", store);

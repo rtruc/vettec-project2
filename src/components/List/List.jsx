@@ -25,10 +25,10 @@ export const List = ({ filters: pageFilter }) => {
     
     // OBJ TEST PATH
     filters.pageFilter = pageFilter;
-    console.log("Filters OBJ: ", filters);
+    // console.log("Filters OBJ: ", filters);
 
     for (const f in filters) {
-        console.log("f: ", f);
+        // console.log("f: ", f);
         reducedSet = [];
         if (f.isInactive !== true) {
             reducedSet.push(...workingSet.filter(task => filters[f](task)));
