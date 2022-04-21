@@ -13,13 +13,14 @@
 + Highlight overdue tasks
 + Dim completed tasks
 
+- Search feature
+- Filter by date range Feature
 - Better styling
 - Dim placeholder text
 - Priority flags
-- Search feature
-- Filter by date range Feature
 - Implement theme colors as global state
 - Option to switch themes
+- Animations
 
 
 - BONUS TASKS

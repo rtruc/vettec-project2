@@ -36,6 +36,10 @@ const NormalTask = styled.div`
     /* box-shadow: 0 0 0 .75pt #fdaab8; */
     /* box-shadow: 0 0 0 .75pt #ffcad3; */
     box-shadow: 0 0 0 .75pt #ffe0e5;
+
+    /* transition-duration: 0.4s; */
+    /* transition: opacity .2s ease-out 100ms; */
+
 `
 
 const OverdueTask = styled(NormalTask)`
@@ -67,7 +71,7 @@ export const Task = ({ taskData }) => {
     if(taskData.isComplete === true) {
         TaskRowDiv = CompletedTask;
     }
-    else if(taskData.date > currentDate) {
+    else if(taskData.date >= currentDate) {
         TaskRowDiv = NormalTask;
     } else {
         TaskRowDiv = OverdueTask;

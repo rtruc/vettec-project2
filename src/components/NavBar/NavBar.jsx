@@ -2,6 +2,7 @@ import { useLocation } from "react-router-dom";
 import styled from "styled-components"
 import { NavItem } from "./NavItem";
 import { ActiveNavLink, NavLink } from "./NavLink";
+import { SearchForm } from "./SearchForm";
 
 const NavBarDiv = styled.div`
 
@@ -45,6 +46,7 @@ export const NavBar = () => {
                             </NavItem> 
                     );
                 })}
+                <SearchForm />
             </NavBarDiv>
         </>
     );

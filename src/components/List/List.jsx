@@ -12,21 +12,75 @@ const ListDiv = styled.div`
     padding-bottom: 50px;
 `
 
-export const List = ({filters}) => {
+export const List = ({ filters: pageFilters }) => {
 
-    const state = useSelector(state => state.tasks);
+    // const tasks = useSelector(state => state.tasks);
+    const { tasks, filters } = useSelector(state => state);
 
-    let displayTasks = [];
-    for(let filter of filters) {
-        displayTasks.push(...state.filter(task => filters[0](task)));
+    // const allFilters = pageFilters.concat(filters);
+    
+    
+    let workingSet = tasks;
+    let reducedSet = [];
+    
+    // OBJ TEST PATH
+    filters.pageFilter = pageFilters;
+    console.log("Filters OBJ: ", filters);
+
+    for (const f in filters) {
+        console.log("f: ", f);
+        reducedSet = [];
+        if (!undefined) {
+            reducedSet.push(...workingSet.filter(task => filters[f](task)));
+        }
+        workingSet = reducedSet;
     }
+
+    // for(let f of allFilters) {
+    //     reducedSet = [];
+    //     console.log("filter iter: ", f);
+    //     if(!undefined) {
+    //         reducedSet.push(...workingSet.filter(task => f(task)));
+    //     }
+    //     workingSet = reducedSet;
+    // }
+
+
+    // console.log("allFilters: ", allFilters);
+    //     reducedSet = [];
+    //     console.log("filter iter: ", f);
+    //     if(!undefined) {
+    //         reducedSet.push(...workingSet.filter(task => f(task)));
+    //     }
+    //     workingSet = reducedSet;
+    // }
+
+
+    // // const tasks = useSelector(state => state.tasks);
+    // const {tasks, filters} = useSelector(state => state);
+
+    // const allFilters = pageFilters.concat(filters);
+
+    // let workingSet = tasks;
+    // let reducedSet = [];
+
+    // console.log("allFilters: ", allFilters);
+    // for(let f of allFilters) {
+    //     reducedSet = [];
+    //     console.log("filter iter: ", f);
+    //     if(!undefined) {
+    //         reducedSet.push(...workingSet.filter(task => f(task)));
+    //     }
+    //     workingSet = reducedSet;
+    // }
+
 
     return (
         <ListDiv>
 
-            {displayTasks.map((task, index) => {
+            {reducedSet.map((task, index) => {
                 return (
-                    <Task key={task._id} taskData={task} /> 
+                    <Task key={task._id} taskData={task} />
                 )
             })}
         </ListDiv>

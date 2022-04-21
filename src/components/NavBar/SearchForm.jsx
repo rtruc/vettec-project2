@@ -1,10 +1,19 @@
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import { searchIcon } from "../../img/icons";
+import { searchTitles } from "../../redux/actions/actions";
 
 
-const SearchFormDiv = styled.form`
+// const SearchFormDiv = styled.form`
+const SearchFormDiv = styled.div`
         display:flex;
         align-items:center;
+        /* max-width: 100px; */
+
+        /* position: absolute; */
+        position: absolute;
+        right: 5px;
+        top: 9px;
 `
 
 const SearchField = styled.input`
@@ -14,6 +23,8 @@ const SearchField = styled.input`
     border: none;
     background-color: rgba(248, 248, 248, 0);
 
+    position: relative;
+
     padding: 3px 5px;
     border-radius: 5px;
     font-family: 'Lato', sans-serif;
@@ -21,7 +32,7 @@ const SearchField = styled.input`
     background-image: url(${searchIcon});
     background-repeat: no-repeat;
     background-size: 19px;
-    background-position: center;
+    background-position: left;
 
     text-align: center;
         
@@ -30,11 +41,14 @@ const SearchField = styled.input`
         border-color 0.4s ease-in-out,
         box-shadow 0.4s ease-in-out;
 
-    margin-right: auto;
+    margin-right: 0;
     margin-left: auto;
+
+    /* max-width: 100px; */
 
     &:hover {
         width: 100%;
+        /* width: 100px; */
         background-color: rgb(255, 255, 255);
         outline: none;
     }
@@ -61,11 +75,15 @@ const SearchField = styled.input`
 `
 
 export const SearchForm = () => {
+
+    const dispatch = useDispatch();
+
     return (
         <>
             <SearchFormDiv action="https://google.com/search">
-                <input type="hidden" name="sitesearch" value="https://rtruc.github.io/vettec-project1/" />
-                <SearchField type="text" id="search" name="q" autoComplete="off" placeholder="search" />
+                {/* <input type="hidden" name="sitesearch" value="https://rtruc.github.io/vettec-project1/" /> */}
+                <SearchField type="text" id="search" name="q" autoComplete="off" placeholder="search"
+                    onChange={e => dispatch(searchTitles(e.target.value))} />
             </SearchFormDiv>
         </>
 
