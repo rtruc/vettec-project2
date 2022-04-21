@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import { editTitle } from "../../redux/actions/actions";
 
-const TitleDiv = styled.input.attrs({type: 'text'})`
+const DefaultTitleDiv = styled.input.attrs({type: 'text'})`
 
     background-color: inherit;
     border:none;
@@ -17,13 +17,24 @@ const TitleDiv = styled.input.attrs({type: 'text'})`
     &:focus {
         outline: none;
     }
-    
+`
+
+const NewTitleDiv = styled(DefaultTitleDiv)`
+    color:grey;
+
 `
 
 
 export const Title = ({title, _id}) => {
 
     const dispatch = useDispatch();
+    let TitleDiv;
+
+    if(title === "New Task") {
+        TitleDiv = NewTitleDiv;
+    } else {
+        TitleDiv = DefaultTitleDiv;
+    }
 
     return (
         <TitleDiv defaultValue={title} onChange={e => dispatch(editTitle(_id, e.target.value))} />

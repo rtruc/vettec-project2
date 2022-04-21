@@ -1,5 +1,6 @@
 import { useLocation } from "react-router-dom";
 import styled from "styled-components"
+import { DateFilter } from "./DateFilter/DateFilter";
 import { NavItem } from "./NavItem";
 import { ActiveNavLink, NavLink } from "./NavLink";
 import { SearchForm } from "./SearchForm";
@@ -38,6 +39,7 @@ export const NavBar = () => {
     return (
         <>
             <NavBarDiv>
+                <DateFilter />
                 {navEntries.map((entry, index) => {
                     return (
                              <NavItem key={index}>

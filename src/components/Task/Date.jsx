@@ -18,7 +18,6 @@ const DueDateDiv = styled.input.attrs({type: 'date'})`
     &:focus {
         outline:none;
     }
-
 `
 
 export const DueDate = ({date, _id}) => {

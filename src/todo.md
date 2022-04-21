@@ -12,8 +12,8 @@
 
 + Highlight overdue tasks
 + Dim completed tasks
++ Search feature
 
-- Search feature
 - Filter by date range Feature
 - Better styling
 - Dim placeholder text

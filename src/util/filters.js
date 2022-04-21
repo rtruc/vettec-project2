@@ -1,12 +1,15 @@
-
-export const todoFilter      = (task) => {return task.isComplete === false};
-export const completedFilter = (task) => {return task.isComplete === true};
+export const todoFilter      = (task) => task.isComplete === false;
+export const completedFilter = (task) => task.isComplete === true;
 export const allFilter       = (task) => true;
 
-export function titleFilter(searchString) {
+export function textFilter(searchString) {
     return function(task) {
-        // console.log("SearchString: ", searchString);
-        // console.log("TaskTitle: ", task.title);
         return task.title.toLowerCase().includes(searchString);
     }
 }     
+
+// export function dateFilter(earlier, later) {
+//     return function(task) {
+//         return earlier <= task.date && task.date >= later;
+//     }
+// }

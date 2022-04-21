@@ -12,7 +12,7 @@ const ListDiv = styled.div`
     padding-bottom: 50px;
 `
 
-export const List = ({ filters: pageFilters }) => {
+export const List = ({ filters: pageFilter }) => {
 
     // const tasks = useSelector(state => state.tasks);
     const { tasks, filters } = useSelector(state => state);
@@ -24,13 +24,13 @@ export const List = ({ filters: pageFilters }) => {
     let reducedSet = [];
     
     // OBJ TEST PATH
-    filters.pageFilter = pageFilters;
+    filters.pageFilter = pageFilter;
     console.log("Filters OBJ: ", filters);
 
     for (const f in filters) {
         console.log("f: ", f);
         reducedSet = [];
-        if (!undefined) {
+        if (f.isInactive !== true) {
             reducedSet.push(...workingSet.filter(task => filters[f](task)));
         }
         workingSet = reducedSet;

@@ -10,4 +10,7 @@ export const deleteTask             = (_id)      => ({ type  : 'DELETE_TASK', _i
 export const editTitle              = (_id, textUpdate) => ({ type  : 'EDIT_TITLE', _id: _id, textUpdate: textUpdate});
 export const editDate               = (_id, dateUpdate) => ({ type  : 'EDIT_DATE',  _id: _id, dateUpdate: dateUpdate});
 
+// export const toggleDateFilter       = (earlyDate, laterDate) => ({ type: 'TOGGLE_DATE_FILTER', earlyDate:earlyDate, laterDate: laterDate});
+export const toggleDateFilter       = () => ({ type: 'TOGGLE_DATE_FILTER'});
+
 export const searchTitles           = (searchText) => ({ type: 'SEARCH_TITLES', searchText: searchText });
