@@ -4,7 +4,8 @@ import { githubIcon, linkedinIcon } from "../../img/icons";
 import { SearchForm } from "../NavBar/SearchForm";
 import { IconBundle } from "./IconBundle";
 import { Icon } from "./Icon";
-import { Controls } from "./ListControls";
+import { ListControls } from "./ListControls";
+import { SocialMediaIcon } from "./SocialMediaIcon";
 
 
 const FooterDiv = styled.div`
@@ -13,7 +14,7 @@ const FooterDiv = styled.div`
 
     flex-wrap: nowrap;
     justify-content: space-between;
-    align-items: stretch;
+    align-items: center;
 
     position: fixed;
     bottom: 0;
@@ -61,30 +62,16 @@ export const Footer = () => {
         <FooterDiv>
 
             <IconBundle>
-                {juhData.map((input, index) => {
-                    return (
-                        <FooterItem key={index}>
-                            <a href={input.link}>
-                                <Icon alt={input.altTxt} src={input.iconURL} />
-                            </a>
-                        </FooterItem>
-                    );
-                })}
+                <SocialMediaIcon iconInfo={juhData[0]} />
+                <SocialMediaIcon iconInfo={juhData[1]} />
             </IconBundle>
 
             {/* <SearchForm /> */}
-            <Controls />
+            <ListControls />
 
             <IconBundle>
-                {trucData.map((input, index) => {
-                    return (
-                        <FooterItem key={index}>
-                            <a href={input.link}>
-                                <Icon alt={input.altTxt} src={input.iconURL} />
-                            </a>
-                        </FooterItem>
-                    );
-                })}
+                <SocialMediaIcon iconInfo={trucData[0]} />
+                <SocialMediaIcon iconInfo={trucData[1]} />
             </IconBundle>
 
         </FooterDiv>

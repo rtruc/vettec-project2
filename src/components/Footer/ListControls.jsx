@@ -15,7 +15,7 @@ const ControlsDiv = styled.div`
     font-weight: bolder;
 `
 
-export const Controls = () => {
+export const ListControls = () => {
 
     const dispatch = useDispatch();
     let pathname = useLocation().pathname;

@@ -1,9 +1,12 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 
 export const NavButton = styled.button`
     /* padding: 10px 20px; */
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
     cursor: pointer;
     max-height: 70px;
     min-height: 40px;
@@ -13,9 +16,12 @@ export const NavButton = styled.button`
 
     border: none;
 
+    font-size:40px;
+
     text-decoration: none;
     background-color: inherit;
     color: white;
+
     transition: background-color .2s ease-out 100ms;
 
     &:hover {
