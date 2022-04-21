@@ -17,11 +17,14 @@ const SearchFormDiv = styled.div`
 `
 
 const SearchField = styled.input`
-    width: 10%;
+    /* width: 10%; */
     max-height:20px;
     display: block;
     border: none;
-    background-color: rgba(248, 248, 248, 0);
+    /* background-color: rgba(248, 248, 248, 0); */
+    /* background-color: rgb(255, 255, 255); */
+    background-color: rgb(252, 226, 226);
+
 
     position: relative;
 
@@ -31,7 +34,7 @@ const SearchField = styled.input`
 
     background-image: url(${searchIcon});
     background-repeat: no-repeat;
-    background-size: 19px;
+    background-size: 18px;
     background-position: left;
 
     text-align: center;
