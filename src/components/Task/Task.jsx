@@ -35,7 +35,7 @@ const NormalTask = styled.div`
     box-shadow: 0 0 0 .75pt ${theme.task_BorderShadowColor};
 
     &:hover, &:focus{
-        filter: saturate(1.95);
+        /* filter: saturate(1.95); */
         box-shadow: 0 0 0 1.75pt ${theme.task_BorderShadowColor_HoverFocus};
         transform: scale(1.025);
     }
@@ -51,7 +51,7 @@ const OverdueTask = styled(NormalTask)`
 `
 
 const CompletedTask = styled(NormalTask)`
-    opacity: 60%;
+    opacity: 40%;
     &:hover{
         opacity: 80%;
             filter: contrast(1.05);

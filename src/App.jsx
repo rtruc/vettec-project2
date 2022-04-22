@@ -13,9 +13,9 @@ function App() {
                     <NavBar />
 
                     <Routes>
-                        <Route path="/"          element={<Todo      />} />
-                        <Route path="/completed" element={<Completed />} />
-                        <Route path="/all"       element={<All       />} />
+                        <Route path="/vettec-project2/"          element={<Todo      />} />
+                        <Route path="/vettec-project2/completed" element={<Completed />} />
+                        <Route path="/vettec-project2/all"       element={<All       />} />
                         <Route path="*"          element={<Navigate  to="/" replace />} />
                     </Routes>
 

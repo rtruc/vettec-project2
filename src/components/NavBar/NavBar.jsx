@@ -4,7 +4,6 @@ import styled from "styled-components"
 import { addTask } from "../../redux/actions/actions";
 import { theme } from "../../util/theme";
 import { DateFilter } from "./DateFilter/DateFilter";
-import { FooterButton } from "../Footer/FooterButton";
 import { NavItem } from "./NavItem";
 import { ActiveNavLink, NavLink } from "./NavLink";
 import { SearchForm } from "./SearchForm";
@@ -33,9 +32,9 @@ const NavBarDiv = styled.div`
 export const NavBar = (props) => {
     
     const navEntries = [
-        { url: "/", name: "ToDo" },
-        { url: "/completed", name: "Completed" },
-        { url: "/all", name: "All" },
+        { url: "/vettec-project2/", name: "ToDo" },
+        { url: "/vettec-project2/completed", name: "Completed" },
+        { url: "/vettec-project2/all", name: "All" },
     ]
     
     const dispatch = useDispatch();

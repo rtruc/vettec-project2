@@ -1,7 +1,7 @@
 {
   "name": "project2",
   "version": "0.1.0",
-  "homepage": "https://rtruc.github.io/react-learning",
+  "homepage": "https://rtruc.github.io/vettec-project2",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
@@ -19,7 +19,8 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy-main": "gh-pages -d build",
-    "deploy": "gh-pages -d build -r https://github.com/rtruc/react-learning.git",
+    "deploy-react": "gh-pages -d build -r https://github.com/rtruc/react-learning.git",
+    "deploy-p2": "gh-pages -d build -r https://github.com/rtruc/vettec-project2.git",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

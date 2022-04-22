@@ -113,20 +113,22 @@ export const themes = {
         task_TextColor                           : 'rgb(255,255,255)',
         task_TextColor_Overdue                   : 'rgb(255, 0, 0)',
         //
-        task_BackgroundColor                     : 'rgb(29, 32, 33)',
+        // task_BackgroundColor                     : 'rgb(29, 32, 33)',
+        task_BackgroundColor                     : 'rgb(0, 81, 180)',
         //
         task_BorderShadowColor                   : 'rgb(47 51 53)',
-        // task_BorderShadowColor_HoverFocus        : 'rgb(138, 190, 253)',
         task_BorderShadowColor_HoverFocus        : 'rgb(0 60 186)',
 
         // 
+        // task_Overdue_BackgroundColor             : 'rgb(0, 34, 255)',
         task_Overdue_BackgroundColor             : 'rgb(0, 81, 180)',
         // 
         // task_Overdue_BorderShadowColor           : 'rgb(2, 89, 194)',
-        task_Overdue_BorderShadowColor           : 'rgb(19, 124, 252)',
+        task_Overdue_BorderShadowColor           : 'rgb(255, 74, 74)',
         
         // task_Overdue_BorderShadowColor_HoverFocus: 'rgb(37, 103, 255)',
-        task_Overdue_BorderShadowColor_HoverFocus: 'rgb(2, 116, 255)',
+        // task_Overdue_BorderShadowColor_HoverFocus: 'rgb(2, 116, 255)',
+        task_Overdue_BorderShadowColor_HoverFocus           : 'rgb(250, 3, 3)',
     
         task_PlaceholderText                     : 'rgb(128,128,128)'
     },
