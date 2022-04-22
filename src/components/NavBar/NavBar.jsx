@@ -10,7 +10,6 @@ import { SearchForm } from "./SearchForm";
 // const navBar_BackgroundColor = 'rgba(233, 16, 246, 0.5)';
 
 const NavBarDiv = styled.div`
-
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -40,7 +39,7 @@ export const NavBar = (props) => {
     
     let pathname = useLocation().pathname;
     // console.log(props.theme);
-
+    // console.log(theme.active_Color);
     
     return (
         <>

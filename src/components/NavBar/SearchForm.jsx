@@ -49,8 +49,8 @@ const SearchField = styled.input`
 
     &:focus {
         background-image: none;
-        color: ${theme.searchBox_Color_Focus};
-        background-color: ${theme.searchBox_BackgroundColor_Focus};
+        color: ${theme.navbar_Text};
+        background-color: ${theme.hover_Color_Alt};
         outline: none;
         /* border-color: #ce61fd; */
     }

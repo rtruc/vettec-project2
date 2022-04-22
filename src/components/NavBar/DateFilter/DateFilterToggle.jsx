@@ -13,5 +13,5 @@ export const DateFilterToggle = styled.input.attrs({type: 'checkbox'})`
     width: 16px;
     height: 16px;
     
-    accent-color: ${theme.dateFilterToggler_AccentColor};
+    accent-color: ${theme.active_Color};
 `

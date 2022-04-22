@@ -1,8 +1,9 @@
 import styled from "styled-components";
+import { theme } from "../../util/theme";
 import { Icon } from "./Icon"
 
-// 
-const socialMediaIcon_BackgroundColor_Hover = 'rgb(235, 16, 246)';
+
+const hover_Color = 'rgb(235, 16, 246)';
 
 const SocialMediaIconDiv = styled.a`
     display: flex;
@@ -14,7 +15,7 @@ const SocialMediaIconDiv = styled.a`
     transition: background-color .2s ease-out 100ms;    
 
     &:hover {
-        background-color: ${socialMediaIcon_BackgroundColor_Hover};
+        background-color: ${theme.hover_Color};
     }
 `
 

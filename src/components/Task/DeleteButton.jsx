@@ -32,10 +32,10 @@ export const DeleteButtonDiv = styled.button`
     width: 14px;
     height: 14px;
 
-    box-shadow: 0px 0px 0px 0.5px red;
+    box-shadow: 0px 0px 0px 0.5px ${theme.deleteButton_BoxShadow};
     
     margin: 0px 5px;
-    background-color: #${theme.deleteButton_BackgroundColor};
+    background-color: ${theme.deleteButton_BackgroundColor};
 
     transition-duration: 0.4s;
     

@@ -6,7 +6,7 @@ import { theme } from "../../../util/theme";
 
 export const DateFilterPicker = styled.input.attrs({type: 'date'})`
     background-color: inherit;
-    color: ${theme.dateFilterPicker_Color};
+    color: ${theme.navbar_Text};
     border: none;
     cursor: pointer;
 
