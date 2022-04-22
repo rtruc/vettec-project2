@@ -9,16 +9,14 @@ export function textFilter(searchString) {
 }     
 
 export function dateFilter(earlier, later) {
+    
+    if (earlier > later) {
+        const swapper = later;
+        later = earlier;
+        earlier = swapper;
+    }
+    
     return function(task) {
-
-        // console.log(earlier <= task.date)
-        // console.log("earlier:", earlier);
-        // console.log("task:", task.date);
-        // console.log("later:", later);
-        // console.log(task.date <= later);
-        // console.log("result:", earlier < task.date && task.date > later);
-        // console.log("");
-        
         return earlier <= task.date && task.date <= later;
     }
 }

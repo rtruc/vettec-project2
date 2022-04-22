@@ -4,27 +4,20 @@ import { searchIcon } from "../../img/icons";
 import { searchTitles } from "../../redux/actions/actions";
 
 
-// const SearchFormDiv = styled.form`
 const SearchFormDiv = styled.div`
         display:flex;
         align-items:center;
-        /* max-width: 100px; */
 
-        /* position: absolute; */
         position: absolute;
         right: 5px;
         top: 9px;
 `
 
 const SearchField = styled.input`
-    /* width: 10%; */
-    max-height:20px;
-    display: block;
+    display: flex;
     border: none;
-    /* background-color: rgba(248, 248, 248, 0); */
-    /* background-color: rgb(255, 255, 255); */
-    background-color: rgb(252, 226, 226);
 
+    width: 100px;
 
     position: relative;
 
@@ -32,63 +25,50 @@ const SearchField = styled.input`
     border-radius: 5px;
     font-family: 'Lato', sans-serif;
 
-    background-image: url(${searchIcon});
-    background-repeat: no-repeat;
-    background-size: 18px;
-    background-position: left;
-
     text-align: center;
         
-    transition: width 0.4s ease-in-out,
-        background-color 0.4s ease-in-out,
-        border-color 0.4s ease-in-out,
-        box-shadow 0.4s ease-in-out;
-
-    margin-right: 0;
-    margin-left: auto;
-
-    /* max-width: 100px; */
+    transition: 
+        background-color 0.3s ease-in-out,
+        color 0.3s ease-in-out;
 
     &:hover {
-        width: 100%;
-        /* width: 100px; */
-        background-color: rgb(255, 255, 255);
+        background-color: rgba(239, 66, 248, 0.318);
         outline: none;
     }
 
     &:focus {
         background-image: none;
-        background-color: rgb(255, 255, 255);
-        width: 100%;
+        color: white;
+        background-color: rgb(211, 15, 222);
         outline: none;
         border-color: #ce61fd;
-        box-shadow: inset 0 0 3px #7cb7e7;
     }
 
     &::placeholder {
-        color: rgba(188, 188, 188, 0);
+        color: rgb(252, 187, 255);
         transition: color 0.4s ease-in-out;
     }
-    &:hover::placeholder {
-        color: rgb(251, 172, 255);
-    }
     &:focus::placeholder {
-        color: rgba(251, 172, 255, 0);
+        color: rgba(188, 188, 188, 0);
     }
+`
+
+const SearchIcon = styled.img`
+    max-height:17px;
+    padding-right: 5px;
 `
 
 export const SearchForm = () => {
 
     const dispatch = useDispatch();
+    const Test = <SearchIcon href={searchIcon} />;
+    console.log(Test);
 
     return (
-        <>
-            <SearchFormDiv action="https://google.com/search">
-                {/* <input type="hidden" name="sitesearch" value="https://rtruc.github.io/vettec-project1/" /> */}
-                <SearchField type="text" id="search" name="q" autoComplete="off" placeholder="search"
-                    onChange={e => dispatch(searchTitles(e.target.value))} />
-            </SearchFormDiv>
-        </>
-
+        <SearchFormDiv>
+            <SearchIcon src={searchIcon} />
+            <SearchField autoComplete="off" placeholder="search"
+                onChange={e => dispatch(searchTitles(e.target.value))} />
+        </SearchFormDiv>
     )
 };

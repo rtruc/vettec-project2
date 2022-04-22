@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const DateFilterPicker = styled.input.attrs({type: 'date'})`
     background-color: inherit;
+    color: white;
     border: none;
     cursor: pointer;
 
@@ -17,10 +18,3 @@ export const DateFilterPicker = styled.input.attrs({type: 'date'})`
         outline:none;
     }
 `
-
-// export const DateFilterPicker = ({date}) => {
-//     console.log("Date: ", date);
-//     return (
-//         <DateFilterPickerDiv defaultValue={date} />
-//     )
-// }

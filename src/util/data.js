@@ -1,5 +1,4 @@
 // TEST DATA
-// TODO: FIGURE OUT A BETTER WAY TO STORE DATES
 
 const tasks = [
     {
@@ -71,6 +70,10 @@ export function getTasks() {
         }
     }
     return tasks;
+}
+
+export function convertDateToHTMLCompliantString(date) {
+    return (JSON.parse(JSON.stringify(date))).substring(0, 10);
 }
 
 

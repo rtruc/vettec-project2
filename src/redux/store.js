@@ -1,24 +1,16 @@
 import { createStore } from 'redux';
-import { getTasks } from '../util/data';
+import { convertDateToHTMLCompliantString, getTasks } from '../util/data';
 import { todoReducer } from './reducers/todoReducer';
 
 let date    = new Date();
-let todayString = JSON.parse(JSON.stringify(date)).substring(0, 10)
-// console.log(todayString);
-
+let todayString = convertDateToHTMLCompliantString(date);
 date.setDate(date.getDate() - 7);
-let weekAgoString = JSON.parse(JSON.stringify(date)).substring(0, 10)
+let weekAgoString = convertDateToHTMLCompliantString(date);
 
-const initData = getTasks();
-// const filters = [];
-// const filters = [null, null, null, null];
-// const filters = Array(4);
+const tasks = getTasks();
 const filters = {};
 const dateRange = {earlier: weekAgoString, later: todayString };
-const initBundle = {tasks: initData, filters: filters, dateRange: dateRange };
 
-// TODO: LOOK IN TO CONFIGURE STORE ALTERNATIVE
-// export const store = createStore(todoReducer, initData); 
-export const store = createStore(todoReducer, initBundle); 
+const initState = {tasks: tasks, filters: filters, dateRange: dateRange };
 
-// console.log("Store: ", store);
+export const store = createStore(todoReducer, initState); 

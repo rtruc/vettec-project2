@@ -1,18 +1,6 @@
-import { useDispatch } from "react-redux";
 import styled from "styled-components";
-import { toggleDateFilter } from "../../../redux/actions/actions";
-import { CheckBoxDiv } from "../../Task/CheckBox";
-
 
 export const DateFilterToggle = styled.input.attrs({type: 'checkbox'})`
     cursor: pointer;
+    accent-color: rgba(233, 16, 246, 0.5);
 `
-
-// export const DateFilterToggle = () => {
-
-//     const dispatch = useDispatch();
-
-//     return (
-//         <CheckBoxDiv onClick={() => dispatch(toggleDateFilter())} />
-//     )
-// }

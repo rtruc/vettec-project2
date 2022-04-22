@@ -22,13 +22,12 @@ const DueDateDiv = styled.input.attrs({type: 'date'})`
 
 export const DueDate = ({date, _id}) => {
 
-    // CUT OVERLY LONG JSON DATE STRING DOWN TO HTML COMPLIANCE
-    date = date.substring(0, 10);
     const dispatch = useDispatch();
 
     return (
-        <>
-            <DueDateDiv defaultValue={date} onChange={e => dispatch(editDate(_id, e.target.value))} />
-        </>
+            <DueDateDiv defaultValue={date} 
+            onBlur={e => dispatch(editDate(_id, e.target.value))}
+            // onChange={e => dispatch(editDate(_id, e.target.value))}
+            />
     )
 }

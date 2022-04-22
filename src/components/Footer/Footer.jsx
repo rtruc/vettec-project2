@@ -1,9 +1,6 @@
 import styled from "styled-components";
-import { FooterItem } from './FooterItem';
 import { githubIcon, linkedinIcon } from "../../img/icons";
-import { SearchForm } from "../NavBar/SearchForm";
 import { IconBundle } from "./IconBundle";
-import { Icon } from "./Icon";
 import { ListControls } from "./ListControls";
 import { SocialMediaIcon } from "./SocialMediaIcon";
 
@@ -68,7 +65,6 @@ export const Footer = () => {
                 <SocialMediaIcon iconInfo={juhSocial[1]} />
             </IconBundle>
 
-            {/* <SearchForm /> */}
             <ListControls />
 
             <IconBundle>

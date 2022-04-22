@@ -37,6 +37,9 @@ export const Title = ({title, _id}) => {
     }
 
     return (
-        <TitleDiv defaultValue={title} onChange={e => dispatch(editTitle(_id, e.target.value))} />
+        <TitleDiv defaultValue={title} 
+        onBlur={e => dispatch(editTitle(_id, e.target.value))} 
+        // onChange={e => dispatch(editTitle(_id, e.target.value))} 
+        />
     )
 }

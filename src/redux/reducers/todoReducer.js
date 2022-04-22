@@ -1,4 +1,4 @@
-import { generateID } from "../../util/data";
+import { convertDateToHTMLCompliantString, generateID } from "../../util/data";
 import { dateFilter, textFilter } from "../../util/filters";
 
 
@@ -46,8 +46,8 @@ export const todoReducer = (state={}, action) => {
         }
 
         case 'ADD_TASK': {
-            // const tasks = state.tasks;
-            const date       = JSON.parse(JSON.stringify(new Date()));
+            // const date       = (JSON.parse(JSON.stringify(new Date()))).substring(0, 10);
+            const date       = convertDateToHTMLCompliantString(new Date());
             const isComplete = action.pathName === "/completed" ? true : false;
             
             const newTask = {title     : "New Task", 
@@ -55,7 +55,8 @@ export const todoReducer = (state={}, action) => {
                              isComplete: isComplete,
                              _id        : generateID()};
 
-            state.tasks.push(newTask);
+            // state.tasks.push(newTask);
+            state.tasks.unshift(newTask);
             return {...state};
         }
 
@@ -90,6 +91,10 @@ export const todoReducer = (state={}, action) => {
         //     state.tasks[index].date = action.dateUpdate;
 
         //     return state;
+        // }
+
+        // case 'FINISHED_DATE_EDIT': {
+        //     return {...state};
         // }
 
         case 'DELETE_TASK': {
