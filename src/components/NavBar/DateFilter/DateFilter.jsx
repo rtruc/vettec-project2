@@ -9,6 +9,8 @@ const DateFilterDiv = styled.form`
         display: flex;
         align-items: center;
 
+        /* margin: 0px 0px; */
+
         position: absolute;
         left: 10px;
         top: 2px;
@@ -27,9 +29,9 @@ export const DateFilter = () => {
     return (
         <DateFilterDiv >
             <DateFilterPickerColumn>
-                <DateFilterPicker defaultValue={later}
+                <DateFilterPicker required defaultValue={later}
                     onChange={(e) => dispatch(updateDateFilter(e.target.value, 'later'))} />
-                <DateFilterPicker defaultValue={earlier}
+                <DateFilterPicker required defaultValue={earlier}
                     onChange={(e) => dispatch(updateDateFilter(e.target.value, 'earlier'))} />
             </DateFilterPickerColumn>
             <DateFilterToggle onClick={() => dispatch(toggleDateFilter())} />

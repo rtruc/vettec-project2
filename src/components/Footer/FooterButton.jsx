@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { theme } from "../../util/theme";
 
 
-export const NavButton = styled.button`
+export const FooterButton = styled.button`
     display:flex;
     justify-content: center;
     align-items: center;

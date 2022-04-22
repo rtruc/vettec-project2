@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { addTask, sortTitlesAscending, sortTitlesDescending, sortDatesAscending, sortDatesDescending } from "../../redux/actions/actions";
 import { NavItem } from "../NavBar/NavItem"
-import { NavButton } from "../NavBar/NavButton"
+import { FooterButton } from "./FooterButton"
 import { Icon } from "./Icon";
 import { alphaDown, alphaUp, timeDown, timeUp } from "../../img/icons";
 
@@ -26,25 +26,26 @@ export const ListControls = () => {
         <ControlsDiv>
             {/* <NavItem>  */}
             {/* <NavButton onClick = {() => dispatch(sortTitlesAscending())}>Sort Title Ascending</NavButton> */}
-            <NavButton onClick={() => dispatch(sortTitlesAscending())}>
+            <FooterButton onClick={() => dispatch(sortTitlesAscending())}>
                 <Icon src={alphaUp} />
-            </NavButton>
+            </FooterButton>
             {/* </NavItem> */}
             {/* <NavButton onClick = {() => dispatch(sortTitlesDescending())}>Sort Title Descending</NavButton> */}
-            <NavButton onClick={() => dispatch(sortTitlesDescending())}>
+            <FooterButton onClick={() => dispatch(sortTitlesDescending())}>
                 <Icon src={alphaDown} />
-            </NavButton>
+            </FooterButton>
             {/* <NavButton onClick={() => dispatch(sortDatesAscending())}>Sort Date Ascending</NavButton> */}
-            <NavButton onClick={() => dispatch(sortDatesAscending())}>
+            <FooterButton onClick={() => dispatch(sortDatesAscending())}>
             <Icon src={timeUp} />
 
-            </NavButton>
+            </FooterButton>
             {/* <NavButton onClick={() => dispatch(sortDatesDescending())}>Sort Date Descending</NavButton> */}
-            <NavButton onClick={() => dispatch(sortDatesDescending())}>
-            <Icon src={timeDown} />
-                
-            </NavButton>
-            <NavButton onClick={() => dispatch(addTask(pathname))}>+</NavButton>
+            <FooterButton onClick={() => dispatch(sortDatesDescending())}>
+            <Icon src={timeDown} />    
+            </FooterButton>
+
+            {/* <FooterButton onClick={() => dispatch(addTask(pathname))}>+</FooterButton> */}
+
         </ControlsDiv>
     );
 

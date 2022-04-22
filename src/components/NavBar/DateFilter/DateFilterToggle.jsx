@@ -5,6 +5,7 @@ import { theme } from "../../../util/theme";
 export const DateFilterToggle = styled.input.attrs({type: 'checkbox'})`
     cursor: pointer;
     position: relative;
+    /* position: absolute; */
     right: 14px;
     
     width: 16px;

@@ -45,14 +45,15 @@ const OverdueTask = styled(NormalTask)`
         background-color: ${theme.task_Overdue_BackgroundColor};
         box-shadow: 0 0 0 .75pt ${theme.task_Overdue_BorderShadowColor};
         &:hover{
-            box-shadow: 0 0 0 1.75pt ${theme.task_Overdue_BorderShadowColor_HoverFocus};
+            box-shadow: 0 0 0 2.00pt ${theme.task_Overdue_BorderShadowColor_HoverFocus};
             filter: brightness(1.05);
         }
 `
 
 const CompletedTask = styled(NormalTask)`
-    opacity: 30%;
+    opacity: 60%;
     &:hover{
+        opacity: 80%;
             filter: contrast(1.05);
         }
 `
@@ -79,7 +80,7 @@ export const Task = ({props, taskData }) => {
 
             <TaskColumn>
                 <Title title={taskData.title} _id={taskData._id}/>
-                <DueDate date={taskData.date}  _id={taskData._id} />
+                <DueDate isComplete={taskData.isComplete} date={taskData.date} currentDate={currentDate}  _id={taskData._id}  />
             </TaskColumn>
         </TaskRowDiv>
     )

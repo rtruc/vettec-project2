@@ -8,6 +8,9 @@ export const DateFilterPicker = styled.input.attrs({type: 'date'})`
     border: none;
     cursor: pointer;
 
+    margin: 0px 0px;
+
+
     font-family: 'Lato', sans-serif;
 
 
@@ -15,9 +18,9 @@ export const DateFilterPicker = styled.input.attrs({type: 'date'})`
     &::-webkit-calendar-picker-indicator{
         display: none;
     }
-    &::-webkit-input-placeholder{ 
+    /* &::-webkit-input-placeholder{ 
         visibility: hidden !important;
-    }
+    } */
 
     &:focus {
         outline:none;

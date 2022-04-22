@@ -10,6 +10,7 @@ const DefaultTitleDiv = styled.input.attrs({type: 'text'})`
     font-family: inherit;
     font-size:1.45em;
     font-weight:900;
+    color: ${theme.task_TextColor};
 
     &::placeholder {
         color: ${theme.task_PlaceholderText};

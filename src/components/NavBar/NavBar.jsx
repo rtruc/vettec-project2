@@ -1,10 +1,14 @@
+import { useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components"
+import { addTask } from "../../redux/actions/actions";
 import { theme } from "../../util/theme";
 import { DateFilter } from "./DateFilter/DateFilter";
+import { FooterButton } from "../Footer/FooterButton";
 import { NavItem } from "./NavItem";
 import { ActiveNavLink, NavLink } from "./NavLink";
 import { SearchForm } from "./SearchForm";
+import { NavBarButton } from "./NavBarButton";
 
 
 const NavBarDiv = styled.div`
@@ -34,6 +38,7 @@ export const NavBar = (props) => {
         { url: "/all", name: "All" },
     ]
     
+    const dispatch = useDispatch();
     let pathname = useLocation().pathname;
     
     return (
@@ -48,6 +53,9 @@ export const NavBar = (props) => {
                             </NavItem> 
                     );
                 })}
+                {/* <NavItem onClick={() => dispatch(addTask(pathname))}>+</NavItem> */}
+                <NavBarButton onClick={() => dispatch(addTask(pathname))}>+</NavBarButton>
+
                 <SearchForm />
             </NavBarDiv>
         </>

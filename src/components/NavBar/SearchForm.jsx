@@ -32,10 +32,10 @@ const SearchField = styled.input`
         background-color 0.3s ease-in-out,
         color 0.3s ease-in-out;
 
-    &:hover {
+    /* &:hover {
         background-color: ${theme.searchBox_BackgroundColor_Hover};
         outline: none;
-    }
+    } */
 
     &:focus {
         background-image: none;
@@ -48,7 +48,7 @@ const SearchField = styled.input`
         color: ${theme.searchBox_Color_Placeholder};
         transition: color 0.4s ease-in-out;
     }
-    &:focus::placeholder {
+    &:hover::placeholder, &:focus::placeholder {
         color: ${theme.searchBox_Color_Placeholder_Focus};
     }
 `
