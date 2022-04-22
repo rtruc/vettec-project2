@@ -1,5 +1,8 @@
+import { useContext } from "react";
 import styled from "styled-components";
+// import { ThemeContext } from "styled-components";
 import { convertDateToHTMLCompliantString } from "../../util/data";
+import ThemeContext from "../../util/themes";
 import { CheckBox } from "./CheckBox";
 import { DueDate } from "./Date";
 import { DeleteButton } from "./DeleteButton";
@@ -12,6 +15,7 @@ const task_BorderShadowColor_HoverFocus = '#fdd5db';
 const task_Overdue_BackgroundColor = '#f76d84';
 const task_Overdue_BorderShadowColor = '#ff7d92';
 const task_Overdue_BorderShadowColor_HoverFocus = '#fe5471';
+
 
 
 const TaskColumn = styled.div`
@@ -66,6 +70,12 @@ const CompletedTask = styled(NormalTask)`
 
 export const Task = ({ taskData }) => {
     
+
+
+    const theme = useContext(ThemeContext);
+    console.log(theme);
+    
+
     let currentDate = convertDateToHTMLCompliantString(new Date());
     let TaskRowDiv;
     
