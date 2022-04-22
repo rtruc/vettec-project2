@@ -56,7 +56,6 @@ export const todoReducer = (state={}, action) => {
                              _id        : generateID()};
 
             state.tasks.push(newTask);
-            // tasks.push(newTask);
             return {...state};
         }
 
@@ -112,34 +111,48 @@ export const todoReducer = (state={}, action) => {
             }
         }
 
-        // case 'TOGGLE_DATE_FILTER': {
-        //     // const earlyDate = action.earlyDate;
-        //     // const laterDate = action.laterDate;
-
-        //     // console.log("DATE FILTER!");
-        //     if(state.filters.dateFilter) {
-        //         delete state.filters.dateFilter;
-        //     } else {
-        //         const earlier = state.dateRange.earlier;
-        //         const later = state.dateRange.later;
-        //         console.log("dateRange", earlier);
-        //         console.log("dateRange", later);
-
-        //         const dateFilter = dateFilter(earlier, later);
-        //         state.filters.dateFilter = dateFilter;
-        //     }
-
-        //     // console.log(earlyDate);
-        //     // console.log(laterDate);
-
-        //     const newState = [...state];
-
-        //     return state;
-        // }
 
         case 'UPDATE_DATE_FILTER': {
-            return;
+            // console.log("state late:", state.dateRange.later);
+            // console.log("Update date range");
+            // console.log("dateType:", action.dateType);
+            // console.log("newDate:", action.newDate);
+            state.dateRange[action.dateType] = action.newDate; 
+            // console.log("state late:", state.dateRange.later);
+
+            if(state.filters.dateFilter) {
+                const earlier = state.dateRange.earlier;
+                const later = state.dateRange.later;
+                state.filters.dateFilter = dateFilter(earlier, later);
+                return {...state};
+            }
+
+            return state;
         }
+        case 'TOGGLE_DATE_FILTER': {
+            // const earlyDate = action.earlyDate;
+            // const laterDate = action.laterDate;
+
+            // console.log("DATE FILTER!");
+            if(state.filters.dateFilter) {
+                delete state.filters.dateFilter;
+            } else {
+                const earlier = state.dateRange.earlier;
+                const later = state.dateRange.later;
+                console.log("dateRange", earlier);
+                console.log("dateRange", later);
+
+                state.filters.dateFilter = dateFilter(earlier, later);
+            }
+
+            // console.log(earlyDate);
+            // console.log(laterDate);
+
+
+            return {...state};
+        }
+
+
 
         default:
             // console.log("DEFAULT REDUCER TRIGGERED");

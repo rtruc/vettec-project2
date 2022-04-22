@@ -1,7 +1,7 @@
 import { useRef } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
-import { toggleDateFilter } from "../../../redux/actions/actions";
+import { toggleDateFilter, updateDateFilter } from "../../../redux/actions/actions";
 import { DateFilterPicker } from "./DateFilterPicker";
 import { DateFilterToggle } from "./DateFilterToggle";
 
@@ -17,18 +17,21 @@ const DateFilterDiv = styled.form`
 `
 
 export const DateFilter = () => {
-    // const {earlier, later} = useSelector(state => state.dateRange);
+    const {earlier, later} = useSelector(state => state.dateRange);
+    const dispatch = useDispatch();
     // console.log("earlier: ", earlier);
     // console.log("later: ", later);
 
 
     return (
-<></>
-        // <DateFilterDiv onChange={(e) => console.log()}>
-        //      <DateFilterPicker name="earlier" defaultValue={earlier} />  {/* max & min? */}
-        //      <DateFilterPicker name="later"   defaultValue={later}/>
-        //      <DateFilterToggle name="clicky"  />
-        // </DateFilterDiv>
+
+        <DateFilterDiv >
+             <DateFilterPicker defaultValue={earlier} 
+                    onChange={(e) => dispatch(updateDateFilter( e.target.value, 'earlier'))} /> 
+             <DateFilterPicker defaultValue={later} 
+                    onChange={(e) => dispatch(updateDateFilter( e.target.value, 'later'))}/>
+             <DateFilterToggle onClick={() => dispatch(toggleDateFilter())} />
+        </DateFilterDiv>
 
     )
 }

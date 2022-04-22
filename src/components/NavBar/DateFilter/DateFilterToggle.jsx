@@ -4,15 +4,15 @@ import { toggleDateFilter } from "../../../redux/actions/actions";
 import { CheckBoxDiv } from "../../Task/CheckBox";
 
 
-const DateFilterToggleDiv = styled.input.attrs({type: 'checkbox'})`
+export const DateFilterToggle = styled.input.attrs({type: 'checkbox'})`
     cursor: pointer;
 `
 
-export const DateFilterToggle = () => {
+// export const DateFilterToggle = () => {
 
-    const dispatch = useDispatch();
+//     const dispatch = useDispatch();
 
-    return (
-        <CheckBoxDiv onClick={() => dispatch(toggleDateFilter())} />
-    )
-}
+//     return (
+//         <CheckBoxDiv onClick={() => dispatch(toggleDateFilter())} />
+//     )
+// }

@@ -12,5 +12,6 @@ export const editDate               = (_id, dateUpdate) => ({ type  : 'EDIT_DATE
 
 // export const toggleDateFilter       = (earlyDate, laterDate) => ({ type: 'TOGGLE_DATE_FILTER', earlyDate:earlyDate, laterDate: laterDate});
 export const toggleDateFilter       = () => ({ type: 'TOGGLE_DATE_FILTER'});
+export const updateDateFilter       = (newDate, dateType) => ({ type: 'UPDATE_DATE_FILTER', newDate: newDate, dateType: dateType});
 
 export const searchTitles           = (searchText) => ({ type: 'SEARCH_TITLES', searchText: searchText });

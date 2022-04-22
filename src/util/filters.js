@@ -8,8 +8,17 @@ export function textFilter(searchString) {
     }
 }     
 
-// export function dateFilter(earlier, later) {
-//     return function(task) {
-//         return earlier <= task.date && task.date >= later;
-//     }
-// }
+export function dateFilter(earlier, later) {
+    return function(task) {
+
+        // console.log(earlier <= task.date)
+        // console.log("earlier:", earlier);
+        // console.log("task:", task.date);
+        // console.log("later:", later);
+        // console.log(task.date <= later);
+        // console.log("result:", earlier < task.date && task.date > later);
+        // console.log("");
+        
+        return earlier <= task.date && task.date <= later;
+    }
+}
