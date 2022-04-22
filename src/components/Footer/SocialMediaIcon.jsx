@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Icon } from "./Icon"
 
-// TODO: THEME
+// 
 const socialMediaIcon_BackgroundColor_Hover = 'rgb(235, 16, 246)';
 
 const SocialMediaIconDiv = styled.a`

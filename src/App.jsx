@@ -2,26 +2,18 @@ import { NavBar } from './components/NavBar/NavBar';
 import { Footer } from './components/Footer/Footer';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { Completed, Todo, All } from './pages';
-import { createContext, useState } from 'react';
-import { juhTheme } from './util/themes';
-import ThemeContext, {themes} from './util/themes';
 
-// CONTEXT
-// export const ThemeContext = createContext();
+import Theme from './util/theme';
+// import styled from 'styled-components';
+
 
 function App() {
-    const [theme, setTheme] = useState(themes.juh);
-
-    // CONTEXT
-    // console.log("Context: ", ThemeContext.Provider);
-    // console.log("Context: ", ThemeContext.Consumer.value);
 
     return (
         <>
             <BrowserRouter>
 
-                {/* CONTEXT */}
-                <ThemeContext.Provider value={theme}>
+                {/* <Theme> */}
                     <NavBar />
 
                     <Routes>
@@ -32,7 +24,8 @@ function App() {
                     </Routes>
 
                     <Footer />
-                </ThemeContext.Provider>
+
+                {/* </Theme> */}
 
             </BrowserRouter>
         </>

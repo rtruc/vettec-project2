@@ -1,7 +1,8 @@
 import styled from "styled-components";
+import { theme } from "../../util/theme";
 
 // TODO: THEME
-const icon_BackgroundColor_Hover = 'rgb(235, 16, 246)';
+// const icon_BackgroundColor_Hover = 'rgb(235, 16, 246)';
 
 export const Icon = styled.img`
     /* max-height: 35px; */
@@ -11,6 +12,6 @@ export const Icon = styled.img`
     /* margin-top: 5px; */
 
     & a:hover {
-        background-color: ${icon_BackgroundColor_Hover};
+        background-color: ${theme.icon_BackgroundColor_Hover};
     } 
 `

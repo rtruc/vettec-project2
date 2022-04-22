@@ -1,11 +1,13 @@
 import styled from "styled-components";
 import { githubIcon, linkedinIcon } from "../../img/icons";
+import { theme } from "../../util/theme";
 import { IconBundle } from "./IconBundle";
 import { ListControls } from "./ListControls";
 import { SocialMediaIcon } from "./SocialMediaIcon";
 
 // TODO: THEME
-const navBar_BackgroundColor = 'rgba(233, 16, 246, 0.5)';
+// const navBar_BackgroundColor = 'rgba(233, 16, 246, 0.5)';
+
 
 const FooterDiv = styled.div`
     display: flex;
@@ -22,7 +24,7 @@ const FooterDiv = styled.div`
 
     height: 50px;
 
-    background-color: ${navBar_BackgroundColor};
+    background-color: ${theme.navBar_BackgroundColor};
 
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);

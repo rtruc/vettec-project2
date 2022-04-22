@@ -1,20 +1,20 @@
 import { useContext } from "react";
 import styled from "styled-components";
-// import { ThemeContext } from "styled-components";
 import { convertDateToHTMLCompliantString } from "../../util/data";
-import ThemeContext from "../../util/themes";
+import { theme } from "../../util/theme";
 import { CheckBox } from "./CheckBox";
 import { DueDate } from "./Date";
 import { DeleteButton } from "./DeleteButton";
 import { Title } from "./Title";
 
+
 // TODO: THEME
-const task_BackgroundColor = '#ffedf0';
-const task_BorderShadowColor = '#ffe0e5';
-const task_BorderShadowColor_HoverFocus = '#fdd5db';
-const task_Overdue_BackgroundColor = '#f76d84';
-const task_Overdue_BorderShadowColor = '#ff7d92';
-const task_Overdue_BorderShadowColor_HoverFocus = '#fe5471';
+// const task_BackgroundColor = '#ffedf0';
+// const task_BorderShadowColor = '#ffe0e5';
+// const task_BorderShadowColor_HoverFocus = '#fdd5db';
+// const task_Overdue_BackgroundColor = '#f76d84';
+// const task_Overdue_BorderShadowColor = '#ff7d92';
+// const task_Overdue_BorderShadowColor_HoverFocus = '#fe5471';
 
 
 
@@ -31,7 +31,7 @@ const NormalTask = styled.div`
 
     position:relative;
     
-    background-color: ${task_BackgroundColor};
+    background-color: ${theme.task_BackgroundColor};
     min-width: 300px;
     max-width: 60%;
     max-height: 100px;
@@ -43,20 +43,20 @@ const NormalTask = styled.div`
     // WEBKIT DOESN'T APPLY BORDER-RADIUS TO OUTLINES...
     // USING HARD DROP SHADOW INSTEAD
     border-radius:5px;
-    box-shadow: 0 0 0 .75pt ${task_BorderShadowColor};
+    box-shadow: 0 0 0 .75pt ${theme.task_BorderShadowColor};
 
     &:hover, &:focus{
         filter: saturate(1.95);
-        box-shadow: 0 0 0 1.75pt ${task_BorderShadowColor_HoverFocus};
+        box-shadow: 0 0 0 1.75pt ${theme.task_BorderShadowColor_HoverFocus};
         /* transform: scale(1.025); */
     }
 `
 
 const OverdueTask = styled(NormalTask)`
-        background-color: ${task_Overdue_BackgroundColor};
-        box-shadow: 0 0 0 .75pt ${task_Overdue_BorderShadowColor};
+        background-color: ${theme.task_Overdue_BackgroundColor};
+        box-shadow: 0 0 0 .75pt ${theme.task_Overdue_BorderShadowColor};
         &:hover{
-            box-shadow: 0 0 0 1.75pt ${task_Overdue_BorderShadowColor_HoverFocus};
+            box-shadow: 0 0 0 1.75pt ${theme.task_Overdue_BorderShadowColor_HoverFocus};
             filter: brightness(1.05);
         }
 `
@@ -68,12 +68,12 @@ const CompletedTask = styled(NormalTask)`
         }
 `
 
-export const Task = ({ taskData }) => {
+export const Task = ({props, taskData }) => {
     
 
 
-    const theme = useContext(ThemeContext);
-    console.log(theme);
+    // const theme = useContext(ThemeContext);
+    // console.log(theme.navBar_BackgroundColor);
     
 
     let currentDate = convertDateToHTMLCompliantString(new Date());

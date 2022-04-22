@@ -1,9 +1,10 @@
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import { editTitle } from "../../redux/actions/actions";
+import { theme } from "../../util/theme";
 
 // TODO: THEME
-const task_PlaceholderText = 'grey';
+// const task_PlaceholderText = 'grey';
 
 const DefaultTitleDiv = styled.input.attrs({type: 'text'})`
     background-color: inherit;
@@ -13,7 +14,7 @@ const DefaultTitleDiv = styled.input.attrs({type: 'text'})`
     font-weight:900;
 
     &::placeholder {
-        color: ${task_PlaceholderText};
+        color: ${theme.task_PlaceholderText};
     }
 
     &:focus {
@@ -22,7 +23,7 @@ const DefaultTitleDiv = styled.input.attrs({type: 'text'})`
 `
 
 const NewTitleDiv = styled(DefaultTitleDiv)`
-    color:${task_PlaceholderText};
+    color:${theme.task_PlaceholderText};
 `
 
 export const Title = ({title, _id}) => {

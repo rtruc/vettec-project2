@@ -1,7 +1,8 @@
 import styled from "styled-components";
+import { theme } from "../../../util/theme";
 
 // TODO: THEME
-const dateFilterToggler_AccentColor = 'rgba(233, 16, 246, 0.5)';
+// const dateFilterToggler_AccentColor = 'rgba(233, 16, 246, 0.5)';
 
 export const DateFilterToggle = styled.input.attrs({type: 'checkbox'})`
     cursor: pointer;
@@ -12,5 +13,5 @@ export const DateFilterToggle = styled.input.attrs({type: 'checkbox'})`
     width: 16px;
     height: 16px;
     
-    accent-color: ${dateFilterToggler_AccentColor};
+    accent-color: ${theme.dateFilterToggler_AccentColor};
 `

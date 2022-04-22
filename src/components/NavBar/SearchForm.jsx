@@ -2,15 +2,16 @@ import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import { searchIcon } from "../../img/icons";
 import { searchTitles } from "../../redux/actions/actions";
+import { theme } from "../../util/theme";
 
 // TODO: THEME
-const searchBox_BackgroundColor_Hover = 'rgba(239, 66, 248, 0.318)';
+// const searchBox_BackgroundColor_Hover = 'rgba(239, 66, 248, 0.318)';
 
-const searchBox_Color_Focus = 'white';
-const searchBox_BackgroundColor_Focus = 'rgb(211, 15, 222)';
+// const searchBox_Color_Focus = 'white';
+// const searchBox_BackgroundColor_Focus = 'rgb(211, 15, 222)';
 
-const searchBox_Color_Placeholder = 'rgb(252, 187, 255)';
-const searchBox_Color_Placeholder_Focus = 'rgba(188, 188, 188, 0)';
+// const searchBox_Color_Placeholder = 'rgb(252, 187, 255)';
+// const searchBox_Color_Placeholder_Focus = 'rgba(188, 188, 188, 0)';
 
 
 
@@ -42,24 +43,24 @@ const SearchField = styled.input`
         color 0.3s ease-in-out;
 
     &:hover {
-        background-color: ${searchBox_BackgroundColor_Hover};
+        background-color: ${theme.searchBox_BackgroundColor_Hover};
         outline: none;
     }
 
     &:focus {
         background-image: none;
-        color: ${searchBox_Color_Focus};
-        background-color: ${searchBox_BackgroundColor_Focus};
+        color: ${theme.searchBox_Color_Focus};
+        background-color: ${theme.searchBox_BackgroundColor_Focus};
         outline: none;
         /* border-color: #ce61fd; */
     }
 
     &::placeholder {
-        color: ${searchBox_Color_Placeholder};
+        color: ${theme.searchBox_Color_Placeholder};
         transition: color 0.4s ease-in-out;
     }
     &:focus::placeholder {
-        color: ${searchBox_Color_Placeholder_Focus};
+        color: ${theme.searchBox_Color_Placeholder_Focus};
     }
 `
 
