@@ -36,7 +36,7 @@ export const themes = {
     
         task_PlaceholderText                     : 'rgb(128,128,128)'
     },
-    
+
     blue: {
         hover_Color                              : 'rgb(16, 66, 246)',
     
@@ -55,7 +55,7 @@ export const themes = {
     
         checkBox_AccentColor                     : 'rgba(16, 66, 246, 0.714)',
     
-        deleteButton_TextColor                   : '#515151',
+        deleteButton_TextColor                   : 'rgb(0, 0, 0)',
         deleteButton_BackgroundColor             : 'rgba(0, 55, 255, 0.714)',
 
         deleteButton_TextColor_Hover             : 'rgb(0,0,0)',

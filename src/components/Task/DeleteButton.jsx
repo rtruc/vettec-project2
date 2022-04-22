@@ -3,14 +3,7 @@ import styled from "styled-components"
 import { deleteTask } from "../../redux/actions/actions";
 import { theme } from "../../util/theme";
 
-// TODO: THEME
-// const deleteButton_TextColor = 'purple';
-// const deleteButton_TextColor_Hover = 'black';
-// const deleteButton_BackgroundColor = '#ff000085';
-// const deleteButton_BackgroundColor_Hover = '#ff0000';
 
-
-// export const DeleteButtonDiv = styled.input.attrs({type: 'button'})`
 export const DeleteButtonDiv = styled.button`
     cursor: pointer;
 
