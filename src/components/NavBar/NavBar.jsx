@@ -5,6 +5,10 @@ import { NavItem } from "./NavItem";
 import { ActiveNavLink, NavLink } from "./NavLink";
 import { SearchForm } from "./SearchForm";
 
+// TODO: THEME
+const navBar_BackgroundColor = 'rgba(233, 16, 246, 0.5)';
+
+
 const NavBarDiv = styled.div`
 
     display: flex;
@@ -17,7 +21,7 @@ const NavBarDiv = styled.div`
     left: 0;
     right: 0;
 
-    background-color: rgba(233, 16, 246, 0.5);
+    background-color: ${navBar_BackgroundColor};
 
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);

@@ -21,7 +21,9 @@
 - Priority flags
 - Implement theme colors as global state
 - Option to switch themes
-- Animations
+~ Animations
+
+- Delay to completion
 
 - BONUS TASKS
 - How hard is it to enable offline PWA mode?

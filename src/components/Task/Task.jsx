@@ -5,6 +5,14 @@ import { DueDate } from "./Date";
 import { DeleteButton } from "./DeleteButton";
 import { Title } from "./Title";
 
+// TODO: THEME
+const task_BackgroundColor = '#ffedf0';
+const task_BorderShadowColor = '#ffe0e5';
+const task_BorderShadowColor_HoverFocus = '#fdd5db';
+const task_Overdue_BackgroundColor = '#f76d84';
+const task_Overdue_BorderShadowColor = '#ff7d92';
+const task_Overdue_BorderShadowColor_HoverFocus = '#fe5471';
+
 
 const TaskColumn = styled.div`
     display: flex;
@@ -19,7 +27,7 @@ const NormalTask = styled.div`
 
     position:relative;
     
-    background-color: #ffedf0;
+    background-color: ${task_BackgroundColor};
     min-width: 300px;
     max-width: 60%;
     max-height: 100px;
@@ -30,23 +38,21 @@ const NormalTask = styled.div`
     
     // WEBKIT DOESN'T APPLY BORDER-RADIUS TO OUTLINES...
     // USING HARD DROP SHADOW INSTEAD
-    /* outline: 1px solid;
-    outline-color: #fdaab8; */
     border-radius:5px;
-    box-shadow: 0 0 0 .75pt #ffe0e5;
+    box-shadow: 0 0 0 .75pt ${task_BorderShadowColor};
 
     &:hover, &:focus{
         filter: saturate(1.95);
-        box-shadow: 0 0 0 1.75pt #fdd5db;
+        box-shadow: 0 0 0 1.75pt ${task_BorderShadowColor_HoverFocus};
         /* transform: scale(1.025); */
     }
 `
 
 const OverdueTask = styled(NormalTask)`
-        background-color: #f76d84;
-        box-shadow: 0 0 0 .75pt #ff7d92;
+        background-color: ${task_Overdue_BackgroundColor};
+        box-shadow: 0 0 0 .75pt ${task_Overdue_BorderShadowColor};
         &:hover{
-            box-shadow: 0 0 0 1.75pt #fe5471;
+            box-shadow: 0 0 0 1.75pt ${task_Overdue_BorderShadowColor_HoverFocus};
             filter: brightness(1.05);
         }
 `

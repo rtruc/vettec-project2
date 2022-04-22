@@ -3,6 +3,11 @@ import styled from "styled-components"
 import { toggleCompletionStatus } from "../../redux/actions/actions";
 
 
+// TODO: THEME
+const checkBox_AccentColor = '#ff3232';
+
+
+
 export const CheckBoxDiv = styled.input.attrs({type: 'checkbox'})`
     cursor: pointer;
 
@@ -12,7 +17,7 @@ export const CheckBoxDiv = styled.input.attrs({type: 'checkbox'})`
 
     margin: 0px 5px;
 
-    accent-color: #ff3232;
+    accent-color: ${checkBox_AccentColor};
 `
 
 export const CheckBox = ({isComplete, _id}) => {

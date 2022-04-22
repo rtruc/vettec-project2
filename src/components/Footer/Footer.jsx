@@ -4,6 +4,8 @@ import { IconBundle } from "./IconBundle";
 import { ListControls } from "./ListControls";
 import { SocialMediaIcon } from "./SocialMediaIcon";
 
+// TODO: THEME
+const navBar_BackgroundColor = 'rgba(233, 16, 246, 0.5)';
 
 const FooterDiv = styled.div`
     display: flex;
@@ -20,7 +22,7 @@ const FooterDiv = styled.div`
 
     height: 50px;
 
-    background-color: rgba(233, 16, 246, 0.5);
+    background-color: ${navBar_BackgroundColor};
 
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);

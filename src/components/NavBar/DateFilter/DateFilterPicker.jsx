@@ -1,8 +1,11 @@
 import styled from "styled-components";
 
+// TODO: THEME
+const dateFilterPicker_Color = 'white';
+
 export const DateFilterPicker = styled.input.attrs({type: 'date'})`
     background-color: inherit;
-    color: white;
+    color: ${dateFilterPicker_Color};
     border: none;
     cursor: pointer;
 
