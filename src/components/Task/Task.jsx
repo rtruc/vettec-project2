@@ -1,4 +1,3 @@
-import { useContext } from "react";
 import styled from "styled-components";
 import { convertDateToHTMLCompliantString } from "../../util/data";
 import { theme } from "../../util/theme";
@@ -6,16 +5,6 @@ import { CheckBox } from "./CheckBox";
 import { DueDate } from "./Date";
 import { DeleteButton } from "./DeleteButton";
 import { Title } from "./Title";
-
-
-// TODO: THEME
-// const task_BackgroundColor = '#ffedf0';
-// const task_BorderShadowColor = '#ffe0e5';
-// const task_BorderShadowColor_HoverFocus = '#fdd5db';
-// const task_Overdue_BackgroundColor = '#f76d84';
-// const task_Overdue_BorderShadowColor = '#ff7d92';
-// const task_Overdue_BorderShadowColor_HoverFocus = '#fe5471';
-
 
 
 const TaskColumn = styled.div`
@@ -48,7 +37,7 @@ const NormalTask = styled.div`
     &:hover, &:focus{
         filter: saturate(1.95);
         box-shadow: 0 0 0 1.75pt ${theme.task_BorderShadowColor_HoverFocus};
-        /* transform: scale(1.025); */
+        transform: scale(1.025);
     }
 `
 
@@ -62,7 +51,7 @@ const OverdueTask = styled(NormalTask)`
 `
 
 const CompletedTask = styled(NormalTask)`
-    opacity: 50%;
+    opacity: 30%;
     &:hover{
             filter: contrast(1.05);
         }
@@ -70,12 +59,6 @@ const CompletedTask = styled(NormalTask)`
 
 export const Task = ({props, taskData }) => {
     
-
-
-    // const theme = useContext(ThemeContext);
-    // console.log(theme.navBar_BackgroundColor);
-    
-
     let currentDate = convertDateToHTMLCompliantString(new Date());
     let TaskRowDiv;
     

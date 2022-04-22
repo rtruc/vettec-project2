@@ -3,8 +3,6 @@ import styled from "styled-components";
 import { editTitle } from "../../redux/actions/actions";
 import { theme } from "../../util/theme";
 
-// TODO: THEME
-// const task_PlaceholderText = 'grey';
 
 const DefaultTitleDiv = styled.input.attrs({type: 'text'})`
     background-color: inherit;

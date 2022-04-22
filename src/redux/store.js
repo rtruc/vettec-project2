@@ -2,8 +2,8 @@ import { createStore } from 'redux';
 import { convertDateToHTMLCompliantString, getTasks } from '../util/data';
 import { todoReducer } from './reducers/todoReducer';
 
-let date    = new Date();
-let todayString = convertDateToHTMLCompliantString(date);
+let date          = new Date();
+let todayString   = convertDateToHTMLCompliantString(date);
 date.setDate(date.getDate() - 7);
 let weekAgoString = convertDateToHTMLCompliantString(date);
 

@@ -6,8 +6,6 @@ import { NavItem } from "./NavItem";
 import { ActiveNavLink, NavLink } from "./NavLink";
 import { SearchForm } from "./SearchForm";
 
-// TODO: THEME
-// const navBar_BackgroundColor = 'rgba(233, 16, 246, 0.5)';
 
 const NavBarDiv = styled.div`
     display: flex;
@@ -34,12 +32,9 @@ export const NavBar = (props) => {
         { url: "/", name: "ToDo" },
         { url: "/completed", name: "Completed" },
         { url: "/all", name: "All" },
-        
     ]
     
     let pathname = useLocation().pathname;
-    // console.log(props.theme);
-    // console.log(theme.active_Color);
     
     return (
         <>

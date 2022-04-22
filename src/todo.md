@@ -16,10 +16,10 @@
 
 + Filter by date range Feature
 + Dim placeholder text
++ Implement theme colors as global state
 
 - Better styling
 - Priority flags
-- Implement theme colors as global state
 - Option to switch themes
 ~ Animations
 

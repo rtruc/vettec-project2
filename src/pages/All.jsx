@@ -7,6 +7,7 @@ export const All = () => {
 
     const filters = useSelector(state => state.filters);    
     filters.pageFilter = allFilter;
+    // delete filters.pageFilter;
 
     return (
             <List />

@@ -4,16 +4,6 @@ import { searchIcon } from "../../img/icons";
 import { searchTitles } from "../../redux/actions/actions";
 import { theme } from "../../util/theme";
 
-// TODO: THEME
-// const searchBox_BackgroundColor_Hover = 'rgba(239, 66, 248, 0.318)';
-
-// const searchBox_Color_Focus = 'white';
-// const searchBox_BackgroundColor_Focus = 'rgb(211, 15, 222)';
-
-// const searchBox_Color_Placeholder = 'rgb(252, 187, 255)';
-// const searchBox_Color_Placeholder_Focus = 'rgba(188, 188, 188, 0)';
-
-
 
 const SearchFormDiv = styled.div`
         display:flex;
@@ -52,7 +42,6 @@ const SearchField = styled.input`
         color: ${theme.navbar_Text};
         background-color: ${theme.hover_Color_Alt};
         outline: none;
-        /* border-color: #ce61fd; */
     }
 
     &::placeholder {

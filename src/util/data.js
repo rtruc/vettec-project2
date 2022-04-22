@@ -1,5 +1,4 @@
 // TEST DATA
-
 const tasks = [
     {
         title: "Wash the Dog",
@@ -50,7 +49,7 @@ const tasks = [
         _id: ""
     },
     {
-        title: "Submit Assignment",
+        title: "Finish Project 2",
         date: "2022-04-22",
         isComplete: false,
         _id: ""
@@ -75,7 +74,6 @@ export function getTasks() {
 export function convertDateToHTMLCompliantString(date) {
     return (JSON.parse(JSON.stringify(date))).substring(0, 10);
 }
-
 
 // JS RANDOM FUNCTION IS WEAK, SO NOT A GREAT _id GENERATOR, BUT IT WILL GET THE JOB DONE
 export function generateID() {

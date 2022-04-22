@@ -3,9 +3,6 @@ import { Footer } from './components/Footer/Footer';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { Completed, Todo, All } from './pages';
 
-import Theme from './util/theme';
-// import styled from 'styled-components';
-
 
 function App() {
 
@@ -13,7 +10,6 @@ function App() {
         <>
             <BrowserRouter>
 
-                {/* <Theme> */}
                     <NavBar />
 
                     <Routes>
@@ -24,8 +20,6 @@ function App() {
                     </Routes>
 
                     <Footer />
-
-                {/* </Theme> */}
 
             </BrowserRouter>
         </>

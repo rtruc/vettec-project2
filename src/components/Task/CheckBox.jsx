@@ -4,11 +4,6 @@ import { toggleCompletionStatus } from "../../redux/actions/actions";
 import { theme } from "../../util/theme";
 
 
-// TODO: THEME
-// const checkBox_AccentColor = '#ff3232';
-
-
-
 export const CheckBoxDiv = styled.input.attrs({type: 'checkbox'})`
     cursor: pointer;
 
