@@ -2,8 +2,8 @@ import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import { editTitle } from "../../redux/actions/actions";
 
-const DefaultTitleDiv = styled.input.attrs({type: 'text'})`
 
+const DefaultTitleDiv = styled.input.attrs({type: 'text'})`
     background-color: inherit;
     border:none;
     font-family: inherit;
@@ -21,9 +21,7 @@ const DefaultTitleDiv = styled.input.attrs({type: 'text'})`
 
 const NewTitleDiv = styled(DefaultTitleDiv)`
     color:grey;
-
 `
-
 
 export const Title = ({title, _id}) => {
 

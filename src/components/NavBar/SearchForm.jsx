@@ -62,7 +62,6 @@ export const SearchForm = () => {
 
     const dispatch = useDispatch();
     const Test = <SearchIcon href={searchIcon} />;
-    console.log(Test);
 
     return (
         <SearchFormDiv>

@@ -14,14 +14,14 @@
 + Dim completed tasks
 + Search feature
 
-- Filter by date range Feature
++ Filter by date range Feature
++ Dim placeholder text
+
 - Better styling
-- Dim placeholder text
 - Priority flags
 - Implement theme colors as global state
 - Option to switch themes
 - Animations
-
 
 - BONUS TASKS
 - How hard is it to enable offline PWA mode?

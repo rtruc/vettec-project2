@@ -6,6 +6,9 @@ export const DateFilterPicker = styled.input.attrs({type: 'date'})`
     border: none;
     cursor: pointer;
 
+    font-family: 'Lato', sans-serif;
+
+
     // HIDES DATE PICKER CALENDAR ICON
     &::-webkit-calendar-picker-indicator{
         display: none;

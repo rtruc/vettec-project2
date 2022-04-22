@@ -25,16 +25,17 @@ export const DeleteButtonDiv = styled.button`
     width: 14px;
     height: 14px;
 
-    /* box-shadow; */
-
+    box-shadow: 0px 0px 0px 0.5px red;
+    
     margin: 0px 5px;
-    background-color: #fc8888;
+    /* background-color: #fc8888; */
+    background-color: #ff000085;
 
     transition-duration: 0.4s;
     
     &:hover {
         background-color: #ff0000;
-
+        color: black;
     }
 `
 

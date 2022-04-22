@@ -4,7 +4,7 @@ export const allFilter       = (task) => true;
 
 export function textFilter(searchString) {
     return function(task) {
-        return task.title.toLowerCase().includes(searchString);
+        return task.title.toLowerCase().includes(searchString) || task.date.includes(searchString);
     }
 }     
 

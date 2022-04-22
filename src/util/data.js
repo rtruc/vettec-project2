@@ -79,7 +79,7 @@ export function convertDateToHTMLCompliantString(date) {
 
 // JS RANDOM FUNCTION IS WEAK, SO NOT A GREAT _id GENERATOR, BUT IT WILL GET THE JOB DONE
 export function generateID() {
-    const lookupString = `abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_+-=~[];',.<>?`;
+    const lookupString = `abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890`;
     let _id = "";
 
     for (let i = 0; i < 33; i++) {

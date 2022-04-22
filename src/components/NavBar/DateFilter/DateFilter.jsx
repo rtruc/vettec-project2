@@ -21,18 +21,18 @@ const DateFilterPickerColumn = styled.div`
 
 
 export const DateFilter = () => {
-    const {earlier, later} = useSelector(state => state.dateRange);
+    const { earlier, later } = useSelector(state => state.dateRange);
     const dispatch = useDispatch();
 
     return (
         <DateFilterDiv >
             <DateFilterPickerColumn>
-             <DateFilterPicker defaultValue={later} 
-                    onChange={(e) => dispatch(updateDateFilter( e.target.value, 'later'))}/>
-             <DateFilterPicker defaultValue={earlier} 
-                    onChange={(e) => dispatch(updateDateFilter( e.target.value, 'earlier'))} /> 
+                <DateFilterPicker defaultValue={later}
+                    onChange={(e) => dispatch(updateDateFilter(e.target.value, 'later'))} />
+                <DateFilterPicker defaultValue={earlier}
+                    onChange={(e) => dispatch(updateDateFilter(e.target.value, 'earlier'))} />
             </DateFilterPickerColumn>
-             <DateFilterToggle onClick={() => dispatch(toggleDateFilter())} />
+            <DateFilterToggle onClick={() => dispatch(toggleDateFilter())} />
         </DateFilterDiv>
 
     )

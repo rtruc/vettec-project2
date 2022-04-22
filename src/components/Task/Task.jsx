@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { convertDateToHTMLCompliantString } from "../../util/data";
 import { CheckBox } from "./CheckBox";
 import { DueDate } from "./Date";
 import { DeleteButton } from "./DeleteButton";
@@ -18,56 +19,50 @@ const NormalTask = styled.div`
 
     position:relative;
     
-    /* background-color: pink; */
-    /* background-color: #ffdce2; */
     background-color: #ffedf0;
     min-width: 300px;
     max-width: 60%;
     max-height: 100px;
 
-    
     padding: 5px;
+
+    transition: all 0.2s ease;
     
-    // SAFARI DOESN'T APPLY BORDER-RADIUS TO OUTLINES...
+    // WEBKIT DOESN'T APPLY BORDER-RADIUS TO OUTLINES...
     // USING HARD DROP SHADOW INSTEAD
     /* outline: 1px solid;
     outline-color: #fdaab8; */
     border-radius:5px;
-    /* box-shadow: 0 0 0 .75pt #fdaab8; */
-    /* box-shadow: 0 0 0 .75pt #ffcad3; */
     box-shadow: 0 0 0 .75pt #ffe0e5;
 
-    /* transition-duration: 0.4s; */
-    /* transition: opacity .2s ease-out 100ms; */
-
+    &:hover, &:focus{
+        filter: saturate(1.95);
+        box-shadow: 0 0 0 1.75pt #fdd5db;
+        /* transform: scale(1.025); */
+    }
 `
 
 const OverdueTask = styled(NormalTask)`
-        background-color: #fb91a2;
+        background-color: #f76d84;
         box-shadow: 0 0 0 .75pt #ff7d92;
+        &:hover{
+            box-shadow: 0 0 0 1.75pt #fe5471;
+            filter: brightness(1.05);
+        }
 `
+
 const CompletedTask = styled(NormalTask)`
-    background-color: #ffedf0;
-    box-shadow: 0 0 0 .75pt #ffe0e5;
     opacity: 50%;
-    /* background-color: #ffdce2; */
-    /* box-shadow: 0 0 0 .75pt #ffcad3; */
+    &:hover{
+            filter: contrast(1.05);
+        }
 `
-
-
-
-
-// const TaskRowDiv = OverdueTask;
-// const TaskRowDiv = CompletedTask;
-
 
 export const Task = ({ taskData }) => {
     
-    let currentDate = JSON.parse(JSON.stringify(new Date())).substring(0, 10);
+    let currentDate = convertDateToHTMLCompliantString(new Date());
     let TaskRowDiv;
     
-    // console.log(currentDate);
-
     if(taskData.isComplete === true) {
         TaskRowDiv = CompletedTask;
     }
